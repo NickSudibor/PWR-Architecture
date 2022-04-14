@@ -14,9 +14,14 @@
 		0C603A632806182700077F30 /* ItemsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C603A622806182700077F30 /* ItemsInteractor.swift */; };
 		0C603A652806183000077F30 /* ItemsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C603A642806183000077F30 /* ItemsPresenter.swift */; };
 		0C603A672806183700077F30 /* ItemsFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C603A662806183700077F30 /* ItemsFactory.swift */; };
-		0C603A692806184800077F30 /* ItemsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C603A682806184800077F30 /* ItemsRouter.swift */; };
-		0C603A6B28061A8900077F30 /* ItemsDataFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C603A6A28061A8900077F30 /* ItemsDataFlow.swift */; };
-		0C603A6D28061AA400077F30 /* ItemsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C603A6C28061AA400077F30 /* ItemsView.swift */; };
+		0C914A3728080AF2001C9AA1 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C914A3628080AF2001C9AA1 /* Item.swift */; };
+		0C914A3928080B4D001C9AA1 /* ItemsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C914A3828080B4D001C9AA1 /* ItemsService.swift */; };
+		0C914A3B28080EE7001C9AA1 /* ItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C914A3A28080EE7001C9AA1 /* ItemViewModel.swift */; };
+		0C914A3E28081001001C9AA1 /* DateFormatters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C914A3D28081001001C9AA1 /* DateFormatters.swift */; };
+		0C914A40280812C7001C9AA1 /* Factory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C914A3F280812C7001C9AA1 /* Factory.swift */; };
+		0CB5C352280831BF0056AB16 /* ReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CB5C351280831BF0056AB16 /* ReusableView.swift */; };
+		0CB5C3572808365D0056AB16 /* ItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CB5C3562808365D0056AB16 /* ItemCell.swift */; };
+		0CB5C359280837AB0056AB16 /* BaseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CB5C358280837AB0056AB16 /* BaseTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,9 +34,14 @@
 		0C603A622806182700077F30 /* ItemsInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemsInteractor.swift; sourceTree = "<group>"; };
 		0C603A642806183000077F30 /* ItemsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemsPresenter.swift; sourceTree = "<group>"; };
 		0C603A662806183700077F30 /* ItemsFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemsFactory.swift; sourceTree = "<group>"; };
-		0C603A682806184800077F30 /* ItemsRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemsRouter.swift; sourceTree = "<group>"; };
-		0C603A6A28061A8900077F30 /* ItemsDataFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemsDataFlow.swift; sourceTree = "<group>"; };
-		0C603A6C28061AA400077F30 /* ItemsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemsView.swift; sourceTree = "<group>"; };
+		0C914A3628080AF2001C9AA1 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
+		0C914A3828080B4D001C9AA1 /* ItemsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemsService.swift; sourceTree = "<group>"; };
+		0C914A3A28080EE7001C9AA1 /* ItemViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemViewModel.swift; sourceTree = "<group>"; };
+		0C914A3D28081001001C9AA1 /* DateFormatters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormatters.swift; sourceTree = "<group>"; };
+		0C914A3F280812C7001C9AA1 /* Factory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Factory.swift; sourceTree = "<group>"; };
+		0CB5C351280831BF0056AB16 /* ReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReusableView.swift; sourceTree = "<group>"; };
+		0CB5C3562808365D0056AB16 /* ItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemCell.swift; sourceTree = "<group>"; };
+		0CB5C358280837AB0056AB16 /* BaseTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +74,7 @@
 		0C603A492806135F00077F30 /* PWR-Architecture */ = {
 			isa = PBXGroup;
 			children = (
+				0C914A3C28080FE0001C9AA1 /* Common */,
 				0C603A5E2806160E00077F30 /* Flows */,
 				0C603A4A2806135F00077F30 /* AppDelegate.swift */,
 				0C603A532806135F00077F30 /* Assets.xcassets */,
@@ -85,14 +96,66 @@
 			isa = PBXGroup;
 			children = (
 				0C603A662806183700077F30 /* ItemsFactory.swift */,
-				0C603A6A28061A8900077F30 /* ItemsDataFlow.swift */,
 				0C603A602806181B00077F30 /* ItemsController.swift */,
 				0C603A622806182700077F30 /* ItemsInteractor.swift */,
 				0C603A642806183000077F30 /* ItemsPresenter.swift */,
-				0C603A682806184800077F30 /* ItemsRouter.swift */,
-				0C603A6C28061AA400077F30 /* ItemsView.swift */,
+				0C914A422808149A001C9AA1 /* Service */,
+				0C914A4128081493001C9AA1 /* Model */,
+				0C914A43280814A5001C9AA1 /* ViewModel */,
+				0CB5C3552808364F0056AB16 /* View */,
 			);
 			path = Items;
+			sourceTree = "<group>";
+		};
+		0C914A3C28080FE0001C9AA1 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				0C914A3D28081001001C9AA1 /* DateFormatters.swift */,
+				0C914A3F280812C7001C9AA1 /* Factory.swift */,
+				0CB5C350280831A90056AB16 /* View */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		0C914A4128081493001C9AA1 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				0C914A3628080AF2001C9AA1 /* Item.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		0C914A422808149A001C9AA1 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				0C914A3828080B4D001C9AA1 /* ItemsService.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		0C914A43280814A5001C9AA1 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				0C914A3A28080EE7001C9AA1 /* ItemViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		0CB5C350280831A90056AB16 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				0CB5C351280831BF0056AB16 /* ReusableView.swift */,
+				0CB5C358280837AB0056AB16 /* BaseTableViewCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		0CB5C3552808364F0056AB16 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				0CB5C3562808365D0056AB16 /* ItemCell.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -165,14 +228,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0CB5C3572808365D0056AB16 /* ItemCell.swift in Sources */,
 				0C603A632806182700077F30 /* ItemsInteractor.swift in Sources */,
 				0C603A652806183000077F30 /* ItemsPresenter.swift in Sources */,
+				0C914A40280812C7001C9AA1 /* Factory.swift in Sources */,
+				0CB5C359280837AB0056AB16 /* BaseTableViewCell.swift in Sources */,
+				0CB5C352280831BF0056AB16 /* ReusableView.swift in Sources */,
 				0C603A612806181B00077F30 /* ItemsController.swift in Sources */,
-				0C603A6B28061A8900077F30 /* ItemsDataFlow.swift in Sources */,
+				0C914A3928080B4D001C9AA1 /* ItemsService.swift in Sources */,
+				0C914A3728080AF2001C9AA1 /* Item.swift in Sources */,
+				0C914A3B28080EE7001C9AA1 /* ItemViewModel.swift in Sources */,
+				0C914A3E28081001001C9AA1 /* DateFormatters.swift in Sources */,
 				0C603A672806183700077F30 /* ItemsFactory.swift in Sources */,
 				0C603A4B2806135F00077F30 /* AppDelegate.swift in Sources */,
-				0C603A692806184800077F30 /* ItemsRouter.swift in Sources */,
-				0C603A6D28061AA400077F30 /* ItemsView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
