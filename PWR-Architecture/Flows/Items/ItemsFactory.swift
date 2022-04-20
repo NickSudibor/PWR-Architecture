@@ -2,7 +2,7 @@
 
 import UIKit
 
-final class ItemsFactory: Factory {
+final class ItemsFactory: FactoryTrait {
     typealias Context = Void
     
     func build(with context: Void) -> UIViewController {

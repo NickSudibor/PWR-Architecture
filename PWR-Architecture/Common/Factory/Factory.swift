@@ -2,7 +2,7 @@
 
 import UIKit
 
-protocol Factory {
+protocol Factory: AnyObject {
     associatedtype Context
     
     func build(with context: Context) -> UIViewController
