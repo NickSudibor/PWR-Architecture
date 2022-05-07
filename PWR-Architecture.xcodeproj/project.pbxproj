@@ -30,9 +30,7 @@
 		0C914A3B28080EE7001C9AA1 /* ItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C914A3A28080EE7001C9AA1 /* ItemViewModel.swift */; };
 		0C914A3E28081001001C9AA1 /* DateFormatters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C914A3D28081001001C9AA1 /* DateFormatters.swift */; };
 		0C914A40280812C7001C9AA1 /* Factory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C914A3F280812C7001C9AA1 /* Factory.swift */; };
-		0CB5C352280831BF0056AB16 /* ReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CB5C351280831BF0056AB16 /* ReusableView.swift */; };
 		0CB5C3572808365D0056AB16 /* ItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CB5C3562808365D0056AB16 /* ItemCell.swift */; };
-		0CB5C359280837AB0056AB16 /* BaseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CB5C358280837AB0056AB16 /* BaseTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -61,9 +59,9 @@
 		0C914A3A28080EE7001C9AA1 /* ItemViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemViewModel.swift; sourceTree = "<group>"; };
 		0C914A3D28081001001C9AA1 /* DateFormatters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormatters.swift; sourceTree = "<group>"; };
 		0C914A3F280812C7001C9AA1 /* Factory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Factory.swift; sourceTree = "<group>"; };
-		0CB5C351280831BF0056AB16 /* ReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReusableView.swift; sourceTree = "<group>"; };
 		0CB5C3562808365D0056AB16 /* ItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemCell.swift; sourceTree = "<group>"; };
-		0CB5C358280837AB0056AB16 /* BaseTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTableViewCell.swift; sourceTree = "<group>"; };
+		0CE8357B282696DC0036F7FE /* Core */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Core; sourceTree = "<group>"; };
+		0CE8357C2826B2200036F7FE /* Features */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Features; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -128,6 +126,7 @@
 		0C603A3E2806135F00077F30 = {
 			isa = PBXGroup;
 			children = (
+				0CE8357A282694A80036F7FE /* Packages */,
 				0C603A492806135F00077F30 /* PWR-Architecture */,
 				0C603A482806135F00077F30 /* Products */,
 			);
@@ -217,8 +216,6 @@
 		0CB5C350280831A90056AB16 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				0CB5C351280831BF0056AB16 /* ReusableView.swift */,
-				0CB5C358280837AB0056AB16 /* BaseTableViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -229,6 +226,15 @@
 				0CB5C3562808365D0056AB16 /* ItemCell.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		0CE8357A282694A80036F7FE /* Packages */ = {
+			isa = PBXGroup;
+			children = (
+				0CE8357B282696DC0036F7FE /* Core */,
+				0CE8357C2826B2200036F7FE /* Features */,
+			);
+			path = Packages;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -247,6 +253,8 @@
 			dependencies = (
 			);
 			name = "PWR-Architecture";
+			packageProductDependencies = (
+			);
 			productName = "PWR-Architecture";
 			productReference = 0C603A472806135F00077F30 /* PWR-Architecture.app */;
 			productType = "com.apple.product-type.application";
@@ -275,6 +283,8 @@
 				Base,
 			);
 			mainGroup = 0C603A3E2806135F00077F30;
+			packageReferences = (
+			);
 			productRefGroup = 0C603A482806135F00077F30 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -313,8 +323,6 @@
 				0C914A40280812C7001C9AA1 /* Factory.swift in Sources */,
 				0C016D562810407400A98DB8 /* AppDependancyContainer.swift in Sources */,
 				0C016D5A2810433900A98DB8 /* TransitionService.swift in Sources */,
-				0CB5C359280837AB0056AB16 /* BaseTableViewCell.swift in Sources */,
-				0CB5C352280831BF0056AB16 /* ReusableView.swift in Sources */,
 				0C603A612806181B00077F30 /* ItemsController.swift in Sources */,
 				0C914A3928080B4D001C9AA1 /* ItemsService.swift in Sources */,
 				0C914A3728080AF2001C9AA1 /* Item.swift in Sources */,
