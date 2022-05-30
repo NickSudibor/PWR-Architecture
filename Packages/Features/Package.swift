@@ -9,7 +9,7 @@ let package = Package(
         .library(name: "Login", targets: ["Login"]),
         .library(name: "Feed", targets: ["Feed"]),
         .library(name: "Profile", targets: ["Profile"]),
-        .library(name: "Details", targets: ["Details"])
+        .library(name: "Settings", targets: ["Settings"])
     ],
     dependencies: [
         .package(path: "../Core"),
@@ -44,7 +44,7 @@ let package = Package(
             ]
         ),
         .target(
-            name: "Details",
+            name: "Settings",
             dependencies: [
                 .product(name: "UIComponents", package: "Core"),
                 .product(name: "SnapKit", package: "SnapKit"),
