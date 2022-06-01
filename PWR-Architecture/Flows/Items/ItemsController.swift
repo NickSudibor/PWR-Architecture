@@ -1,6 +1,7 @@
 //  Created by Nick Sudibor on 12.04.22.
 
 import UIKit
+import UIComponents
 
 protocol ItemsControllerProtocol: AnyObject {
     func displayItems(_ viewModels: [ItemViewModel])

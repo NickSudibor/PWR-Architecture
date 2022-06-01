@@ -1,6 +1,7 @@
 //  Created by Nick Sudibor on 14.04.22.
 
 import UIKit
+import UIComponents
 
 final class ItemCell: BaseTableViewCell {
     private let titleLabel = UILabel()

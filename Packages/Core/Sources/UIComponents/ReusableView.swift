@@ -2,9 +2,9 @@
 
 import UIKit
 
-protocol ReusableView: AnyObject { }
+public protocol ReusableView: AnyObject { }
 
-extension ReusableView where Self: UIView {
+public extension ReusableView where Self: UIView {
     static var reuseID: String {
         return String(describing: classForCoder())
     }
@@ -16,7 +16,7 @@ extension UICollectionReusableView: ReusableView { }
 
 // MARK: - UITableView
 
-extension UITableView {
+public extension UITableView {
     func registerCell<T: UITableViewCell>(_ type: T.Type) {
         register(T.self, forCellReuseIdentifier: T.reuseID)
     }
@@ -42,7 +42,7 @@ extension UITableView {
 
 // MARK: - CollectionView
 
-extension UICollectionView {
+public extension UICollectionView {
     func registerCell<T: UICollectionViewCell>(_ type: T.Type) {
         register(type, forCellWithReuseIdentifier: T.reuseID)
     }

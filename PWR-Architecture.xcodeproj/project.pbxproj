@@ -18,6 +18,11 @@
 		0C016D66281053C900A98DB8 /* AppFlowManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C016D65281053C900A98DB8 /* AppFlowManager.swift */; };
 		0C016D6928105E8B00A98DB8 /* ItemsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C016D6828105E8B00A98DB8 /* ItemsRouter.swift */; };
 		0C016D6B28106A3200A98DB8 /* FactoryTrait.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C016D6A28106A3200A98DB8 /* FactoryTrait.swift */; };
+		0C3DE1202847691E007B7811 /* UIComponents in Frameworks */ = {isa = PBXBuildFile; productRef = 0C3DE11F2847691E007B7811 /* UIComponents */; };
+		0C3DE12228476921007B7811 /* Feed in Frameworks */ = {isa = PBXBuildFile; productRef = 0C3DE12128476921007B7811 /* Feed */; };
+		0C3DE12428476925007B7811 /* Login in Frameworks */ = {isa = PBXBuildFile; productRef = 0C3DE12328476925007B7811 /* Login */; };
+		0C3DE12628476925007B7811 /* Profile in Frameworks */ = {isa = PBXBuildFile; productRef = 0C3DE12528476925007B7811 /* Profile */; };
+		0C3DE12828476925007B7811 /* Settings in Frameworks */ = {isa = PBXBuildFile; productRef = 0C3DE12728476925007B7811 /* Settings */; };
 		0C603A4B2806135F00077F30 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C603A4A2806135F00077F30 /* AppDelegate.swift */; };
 		0C603A542806135F00077F30 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0C603A532806135F00077F30 /* Assets.xcassets */; };
 		0C603A572806135F00077F30 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0C603A552806135F00077F30 /* LaunchScreen.storyboard */; };
@@ -69,6 +74,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0C3DE12628476925007B7811 /* Profile in Frameworks */,
+				0C3DE12828476925007B7811 /* Settings in Frameworks */,
+				0C3DE12428476925007B7811 /* Login in Frameworks */,
+				0C3DE12228476921007B7811 /* Feed in Frameworks */,
+				0C3DE1202847691E007B7811 /* UIComponents in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -123,12 +133,20 @@
 			path = Router;
 			sourceTree = "<group>";
 		};
+		0C3DE11E284768D1007B7811 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		0C603A3E2806135F00077F30 = {
 			isa = PBXGroup;
 			children = (
 				0CE8357A282694A80036F7FE /* Packages */,
 				0C603A492806135F00077F30 /* PWR-Architecture */,
 				0C603A482806135F00077F30 /* Products */,
+				0C3DE11E284768D1007B7811 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -184,7 +202,6 @@
 				0C016D5F281045F300A98DB8 /* Factory */,
 				0C016D5028103FB500A98DB8 /* Logic */,
 				0C016D4F28103F2D00A98DB8 /* Router */,
-				0CB5C350280831A90056AB16 /* View */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -211,13 +228,6 @@
 				0C914A3A28080EE7001C9AA1 /* ItemViewModel.swift */,
 			);
 			path = ViewModel;
-			sourceTree = "<group>";
-		};
-		0CB5C350280831A90056AB16 /* View */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = View;
 			sourceTree = "<group>";
 		};
 		0CB5C3552808364F0056AB16 /* View */ = {
@@ -254,6 +264,11 @@
 			);
 			name = "PWR-Architecture";
 			packageProductDependencies = (
+				0C3DE11F2847691E007B7811 /* UIComponents */,
+				0C3DE12128476921007B7811 /* Feed */,
+				0C3DE12328476925007B7811 /* Login */,
+				0C3DE12528476925007B7811 /* Profile */,
+				0C3DE12728476925007B7811 /* Settings */,
 			);
 			productName = "PWR-Architecture";
 			productReference = 0C603A472806135F00077F30 /* PWR-Architecture.app */;
@@ -546,6 +561,29 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		0C3DE11F2847691E007B7811 /* UIComponents */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = UIComponents;
+		};
+		0C3DE12128476921007B7811 /* Feed */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Feed;
+		};
+		0C3DE12328476925007B7811 /* Login */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Login;
+		};
+		0C3DE12528476925007B7811 /* Profile */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Profile;
+		};
+		0C3DE12728476925007B7811 /* Settings */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Settings;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 0C603A3F2806135F00077F30 /* Project object */;
 }
