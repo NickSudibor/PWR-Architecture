@@ -2,7 +2,7 @@
 
 import UIKit
 
-public final class ReplaceRootAction: RoutingAction {
+public final class DefaultReplaceRootAction: ReplaceRootRoutingAction {
     private let windowProvider: WindowProvider
     
     public init(windowProvider: WindowProvider = KeyWindowProvider()) {
@@ -10,7 +10,6 @@ public final class ReplaceRootAction: RoutingAction {
     }
     
     public func perform(
-        on sourceController: UIViewController?,
         with destinationController: UIViewController,
         animated: Bool,
         completion: (() -> Void)?

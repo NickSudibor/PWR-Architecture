@@ -10,12 +10,15 @@ protocol EnterPhoneViewModelProtocol {
 }
 
 final class EnterPhoneViewModel: EnterPhoneViewModelProtocol {
+    private let router: EnterPhoneRouter
+    
     private let actionRelay = PublishRelay<EnterPhone.Action>()
     private let disposeBag = DisposeBag()
     
     var actions: AnyObserver<EnterPhone.Action> { actionRelay.asObserver() }
     
-    init() {
+    init(router: EnterPhoneRouter) {
+        self.router = router
         subscribeToActions()
     }
 }
@@ -32,7 +35,7 @@ private extension EnterPhoneViewModel {
     func processAction(_ action: EnterPhone.Action) {
         switch action {
         case .confirmPhoneTapped:
-            break
+            router.routeToConfirmPhone()
         }
     }
 }

@@ -17,9 +17,3 @@ public final class EmbedRoutingDestination: RoutingDestination {
         return container
     }
 }
-
-public extension Array where Element == RoutingDestination {
-    func embed(in container: ContainerController) -> RoutingDestination {
-        return EmbedRoutingDestination(container: container, embedded: self)
-    }
-}

@@ -10,12 +10,15 @@ protocol OnboardingViewModelProtocol {
 }
 
 final class OnboardingViewModel: OnboardingViewModelProtocol {
+    private let router: OnboardingRouter
+    
     private let actionRelay = PublishRelay<Onboarding.Action>()
     private let disposeBag = DisposeBag()
     
     var actions: AnyObserver<Onboarding.Action> { actionRelay.asObserver() }
     
-    init() {
+    init(router: OnboardingRouter) {
+        self.router = router
         subscribeToActions()
     }
 }
@@ -32,7 +35,7 @@ private extension OnboardingViewModel {
     func processAction(_ action: Onboarding.Action) {
         switch action {
         case .enterPhoneTapped:
-            break
+            router.routeToEnterPhone()
         }
     }
 }
