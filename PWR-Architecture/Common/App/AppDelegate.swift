@@ -1,11 +1,11 @@
 //  Created by Nick Sudibor on 12.04.22.
 
 import UIKit
+import Login
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
     private let dependencyContainer: AppDependencyContainerProtocol = AppDependencyContainer.shared
-    private var flowManager: AppFlowManagerProtocol!
     
     var window: UIWindow?
 
@@ -14,12 +14,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window.makeKeyAndVisible()
         self.window = window
         
-        flowManager = AppFlowManager(
-            dependencyContainer: dependencyContainer,
-            itemsRouter: .init(ItemsRouter(window: window))
-        )
-        dependencyContainer.start(with: launchOptions)
-        flowManager.start()
+        window.rootViewController = LoginFactory().build()
         
         return true
     }

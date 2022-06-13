@@ -10,14 +10,6 @@
 		0C016D5228103FED00A98DB8 /* UserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C016D5128103FED00A98DB8 /* UserManager.swift */; };
 		0C016D542810404C00A98DB8 /* AuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C016D532810404C00A98DB8 /* AuthManager.swift */; };
 		0C016D562810407400A98DB8 /* AppDependancyContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C016D552810407400A98DB8 /* AppDependancyContainer.swift */; };
-		0C016D5A2810433900A98DB8 /* TransitionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C016D592810433900A98DB8 /* TransitionService.swift */; };
-		0C016D5C2810451800A98DB8 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C016D5B2810451800A98DB8 /* Router.swift */; };
-		0C016D5E2810459500A98DB8 /* RouterTrait.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C016D5D2810459500A98DB8 /* RouterTrait.swift */; };
-		0C016D612810460100A98DB8 /* AnyFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C016D602810460100A98DB8 /* AnyFactory.swift */; };
-		0C016D632810529300A98DB8 /* AnyRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C016D622810529300A98DB8 /* AnyRouter.swift */; };
-		0C016D66281053C900A98DB8 /* AppFlowManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C016D65281053C900A98DB8 /* AppFlowManager.swift */; };
-		0C016D6928105E8B00A98DB8 /* ItemsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C016D6828105E8B00A98DB8 /* ItemsRouter.swift */; };
-		0C016D6B28106A3200A98DB8 /* FactoryTrait.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C016D6A28106A3200A98DB8 /* FactoryTrait.swift */; };
 		0C3DE1202847691E007B7811 /* UIComponents in Frameworks */ = {isa = PBXBuildFile; productRef = 0C3DE11F2847691E007B7811 /* UIComponents */; };
 		0C3DE12228476921007B7811 /* Feed in Frameworks */ = {isa = PBXBuildFile; productRef = 0C3DE12128476921007B7811 /* Feed */; };
 		0C3DE12428476925007B7811 /* Login in Frameworks */ = {isa = PBXBuildFile; productRef = 0C3DE12328476925007B7811 /* Login */; };
@@ -26,45 +18,17 @@
 		0C603A4B2806135F00077F30 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C603A4A2806135F00077F30 /* AppDelegate.swift */; };
 		0C603A542806135F00077F30 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0C603A532806135F00077F30 /* Assets.xcassets */; };
 		0C603A572806135F00077F30 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0C603A552806135F00077F30 /* LaunchScreen.storyboard */; };
-		0C603A612806181B00077F30 /* ItemsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C603A602806181B00077F30 /* ItemsController.swift */; };
-		0C603A632806182700077F30 /* ItemsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C603A622806182700077F30 /* ItemsInteractor.swift */; };
-		0C603A652806183000077F30 /* ItemsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C603A642806183000077F30 /* ItemsPresenter.swift */; };
-		0C603A672806183700077F30 /* ItemsFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C603A662806183700077F30 /* ItemsFactory.swift */; };
-		0C914A3728080AF2001C9AA1 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C914A3628080AF2001C9AA1 /* Item.swift */; };
-		0C914A3928080B4D001C9AA1 /* ItemsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C914A3828080B4D001C9AA1 /* ItemsService.swift */; };
-		0C914A3B28080EE7001C9AA1 /* ItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C914A3A28080EE7001C9AA1 /* ItemViewModel.swift */; };
-		0C914A3E28081001001C9AA1 /* DateFormatters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C914A3D28081001001C9AA1 /* DateFormatters.swift */; };
-		0C914A40280812C7001C9AA1 /* Factory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C914A3F280812C7001C9AA1 /* Factory.swift */; };
-		0CB5C3572808365D0056AB16 /* ItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CB5C3562808365D0056AB16 /* ItemCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		0C016D5128103FED00A98DB8 /* UserManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserManager.swift; sourceTree = "<group>"; };
 		0C016D532810404C00A98DB8 /* AuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthManager.swift; sourceTree = "<group>"; };
 		0C016D552810407400A98DB8 /* AppDependancyContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDependancyContainer.swift; sourceTree = "<group>"; };
-		0C016D592810433900A98DB8 /* TransitionService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransitionService.swift; sourceTree = "<group>"; };
-		0C016D5B2810451800A98DB8 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
-		0C016D5D2810459500A98DB8 /* RouterTrait.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouterTrait.swift; sourceTree = "<group>"; };
-		0C016D602810460100A98DB8 /* AnyFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnyFactory.swift; sourceTree = "<group>"; };
-		0C016D622810529300A98DB8 /* AnyRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnyRouter.swift; sourceTree = "<group>"; };
-		0C016D65281053C900A98DB8 /* AppFlowManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppFlowManager.swift; sourceTree = "<group>"; };
-		0C016D6828105E8B00A98DB8 /* ItemsRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemsRouter.swift; sourceTree = "<group>"; };
-		0C016D6A28106A3200A98DB8 /* FactoryTrait.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FactoryTrait.swift; sourceTree = "<group>"; };
 		0C603A472806135F00077F30 /* PWR-Architecture.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "PWR-Architecture.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0C603A4A2806135F00077F30 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0C603A532806135F00077F30 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0C603A562806135F00077F30 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0C603A582806135F00077F30 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		0C603A602806181B00077F30 /* ItemsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemsController.swift; sourceTree = "<group>"; };
-		0C603A622806182700077F30 /* ItemsInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemsInteractor.swift; sourceTree = "<group>"; };
-		0C603A642806183000077F30 /* ItemsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemsPresenter.swift; sourceTree = "<group>"; };
-		0C603A662806183700077F30 /* ItemsFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemsFactory.swift; sourceTree = "<group>"; };
-		0C914A3628080AF2001C9AA1 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
-		0C914A3828080B4D001C9AA1 /* ItemsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemsService.swift; sourceTree = "<group>"; };
-		0C914A3A28080EE7001C9AA1 /* ItemViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemViewModel.swift; sourceTree = "<group>"; };
-		0C914A3D28081001001C9AA1 /* DateFormatters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormatters.swift; sourceTree = "<group>"; };
-		0C914A3F280812C7001C9AA1 /* Factory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Factory.swift; sourceTree = "<group>"; };
-		0CB5C3562808365D0056AB16 /* ItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemCell.swift; sourceTree = "<group>"; };
 		0CE8357B282696DC0036F7FE /* Core */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Core; sourceTree = "<group>"; };
 		0CE8357C2826B2200036F7FE /* Features */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Features; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -85,17 +49,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		0C016D4F28103F2D00A98DB8 /* Router */ = {
-			isa = PBXGroup;
-			children = (
-				0C016D5B2810451800A98DB8 /* Router.swift */,
-				0C016D5D2810459500A98DB8 /* RouterTrait.swift */,
-				0C016D592810433900A98DB8 /* TransitionService.swift */,
-				0C016D622810529300A98DB8 /* AnyRouter.swift */,
-			);
-			path = Router;
-			sourceTree = "<group>";
-		};
 		0C016D5028103FB500A98DB8 /* Logic */ = {
 			isa = PBXGroup;
 			children = (
@@ -105,32 +58,13 @@
 			path = Logic;
 			sourceTree = "<group>";
 		};
-		0C016D5F281045F300A98DB8 /* Factory */ = {
-			isa = PBXGroup;
-			children = (
-				0C914A3F280812C7001C9AA1 /* Factory.swift */,
-				0C016D6A28106A3200A98DB8 /* FactoryTrait.swift */,
-				0C016D602810460100A98DB8 /* AnyFactory.swift */,
-			);
-			path = Factory;
-			sourceTree = "<group>";
-		};
 		0C016D64281053AA00A98DB8 /* App */ = {
 			isa = PBXGroup;
 			children = (
 				0C603A4A2806135F00077F30 /* AppDelegate.swift */,
 				0C016D552810407400A98DB8 /* AppDependancyContainer.swift */,
-				0C016D65281053C900A98DB8 /* AppFlowManager.swift */,
 			);
 			path = App;
-			sourceTree = "<group>";
-		};
-		0C016D6728105B5300A98DB8 /* Router */ = {
-			isa = PBXGroup;
-			children = (
-				0C016D6828105E8B00A98DB8 /* ItemsRouter.swift */,
-			);
-			path = Router;
 			sourceTree = "<group>";
 		};
 		0C3DE11E284768D1007B7811 /* Frameworks */ = {
@@ -162,7 +96,6 @@
 			isa = PBXGroup;
 			children = (
 				0C914A3C28080FE0001C9AA1 /* Common */,
-				0C603A5E2806160E00077F30 /* Flows */,
 				0C603A532806135F00077F30 /* Assets.xcassets */,
 				0C603A552806135F00077F30 /* LaunchScreen.storyboard */,
 				0C603A582806135F00077F30 /* Info.plist */,
@@ -170,72 +103,13 @@
 			path = "PWR-Architecture";
 			sourceTree = "<group>";
 		};
-		0C603A5E2806160E00077F30 /* Flows */ = {
-			isa = PBXGroup;
-			children = (
-				0C603A5F280617F500077F30 /* Items */,
-			);
-			path = Flows;
-			sourceTree = "<group>";
-		};
-		0C603A5F280617F500077F30 /* Items */ = {
-			isa = PBXGroup;
-			children = (
-				0C603A662806183700077F30 /* ItemsFactory.swift */,
-				0C603A602806181B00077F30 /* ItemsController.swift */,
-				0C603A622806182700077F30 /* ItemsInteractor.swift */,
-				0C603A642806183000077F30 /* ItemsPresenter.swift */,
-				0C016D6728105B5300A98DB8 /* Router */,
-				0C914A422808149A001C9AA1 /* Service */,
-				0C914A4128081493001C9AA1 /* Model */,
-				0C914A43280814A5001C9AA1 /* ViewModel */,
-				0CB5C3552808364F0056AB16 /* View */,
-			);
-			path = Items;
-			sourceTree = "<group>";
-		};
 		0C914A3C28080FE0001C9AA1 /* Common */ = {
 			isa = PBXGroup;
 			children = (
-				0C914A3D28081001001C9AA1 /* DateFormatters.swift */,
 				0C016D64281053AA00A98DB8 /* App */,
-				0C016D5F281045F300A98DB8 /* Factory */,
 				0C016D5028103FB500A98DB8 /* Logic */,
-				0C016D4F28103F2D00A98DB8 /* Router */,
 			);
 			path = Common;
-			sourceTree = "<group>";
-		};
-		0C914A4128081493001C9AA1 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				0C914A3628080AF2001C9AA1 /* Item.swift */,
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		0C914A422808149A001C9AA1 /* Service */ = {
-			isa = PBXGroup;
-			children = (
-				0C914A3828080B4D001C9AA1 /* ItemsService.swift */,
-			);
-			path = Service;
-			sourceTree = "<group>";
-		};
-		0C914A43280814A5001C9AA1 /* ViewModel */ = {
-			isa = PBXGroup;
-			children = (
-				0C914A3A28080EE7001C9AA1 /* ItemViewModel.swift */,
-			);
-			path = ViewModel;
-			sourceTree = "<group>";
-		};
-		0CB5C3552808364F0056AB16 /* View */ = {
-			isa = PBXGroup;
-			children = (
-				0CB5C3562808365D0056AB16 /* ItemCell.swift */,
-			);
-			path = View;
 			sourceTree = "<group>";
 		};
 		0CE8357A282694A80036F7FE /* Packages */ = {
@@ -326,28 +200,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0CB5C3572808365D0056AB16 /* ItemCell.swift in Sources */,
-				0C016D6B28106A3200A98DB8 /* FactoryTrait.swift in Sources */,
-				0C603A632806182700077F30 /* ItemsInteractor.swift in Sources */,
-				0C016D5E2810459500A98DB8 /* RouterTrait.swift in Sources */,
 				0C016D5228103FED00A98DB8 /* UserManager.swift in Sources */,
-				0C603A652806183000077F30 /* ItemsPresenter.swift in Sources */,
-				0C016D5C2810451800A98DB8 /* Router.swift in Sources */,
 				0C016D542810404C00A98DB8 /* AuthManager.swift in Sources */,
-				0C016D66281053C900A98DB8 /* AppFlowManager.swift in Sources */,
-				0C914A40280812C7001C9AA1 /* Factory.swift in Sources */,
 				0C016D562810407400A98DB8 /* AppDependancyContainer.swift in Sources */,
-				0C016D5A2810433900A98DB8 /* TransitionService.swift in Sources */,
-				0C603A612806181B00077F30 /* ItemsController.swift in Sources */,
-				0C914A3928080B4D001C9AA1 /* ItemsService.swift in Sources */,
-				0C914A3728080AF2001C9AA1 /* Item.swift in Sources */,
-				0C016D612810460100A98DB8 /* AnyFactory.swift in Sources */,
-				0C914A3B28080EE7001C9AA1 /* ItemViewModel.swift in Sources */,
-				0C914A3E28081001001C9AA1 /* DateFormatters.swift in Sources */,
-				0C603A672806183700077F30 /* ItemsFactory.swift in Sources */,
 				0C603A4B2806135F00077F30 /* AppDelegate.swift in Sources */,
-				0C016D632810529300A98DB8 /* AnyRouter.swift in Sources */,
-				0C016D6928105E8B00A98DB8 /* ItemsRouter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
