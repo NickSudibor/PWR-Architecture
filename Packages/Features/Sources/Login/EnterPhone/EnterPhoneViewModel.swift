@@ -5,15 +5,15 @@ import PWRFoundation
 import RxSwift
 import RxRelay
 
-protocol LoginViewModelProtocol {
-    var actions: AnyObserver<Login.Action> { get }
+protocol EnterPhoneViewModelProtocol {
+    var actions: AnyObserver<EnterPhone.Action> { get }
 }
 
-final class LoginViewModel: LoginViewModelProtocol {
-    private let actionRelay = PublishRelay<Login.Action>()
+final class EnterPhoneViewModel: EnterPhoneViewModelProtocol {
+    private let actionRelay = PublishRelay<EnterPhone.Action>()
     private let disposeBag = DisposeBag()
     
-    var actions: AnyObserver<Login.Action> { actionRelay.asObserver() }
+    var actions: AnyObserver<EnterPhone.Action> { actionRelay.asObserver() }
     
     init() {
         subscribeToActions()
@@ -22,16 +22,16 @@ final class LoginViewModel: LoginViewModelProtocol {
 
 // MARK: - Actions
 
-private extension LoginViewModel {
+private extension EnterPhoneViewModel {
     func subscribeToActions() {
         actionRelay
             .subscribe(onNext: { [weak self] in self?.processAction($0) })
             .disposed(by: disposeBag)
     }
     
-    func processAction(_ action: Login.Action) {
+    func processAction(_ action: EnterPhone.Action) {
         switch action {
-        case .loginTapped:
+        case .confirmPhoneTapped:
             break
         }
     }

@@ -2,12 +2,12 @@
 
 import UIKit
 
-public final class LoginFactory {
+public final class ConfirmPhoneFactory {
     public init() { }
     
     public func build() -> UIViewController {
-        let viewModel = LoginViewModel()
-        let controller = LoginController(viewModel: viewModel)
+        let viewModel = ConfirmPhoneViewModel()
+        let controller = ConfirmPhoneController(viewModel: viewModel)
         return controller
     }
 }

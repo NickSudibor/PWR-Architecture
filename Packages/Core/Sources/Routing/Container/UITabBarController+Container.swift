@@ -7,6 +7,10 @@ extension UITabBarController: ContainerController {
         return selectedViewController
     }
     
+    public func setControllers(_ controllers: [UIViewController], animated: Bool) {
+        setViewControllers(controllers, animated: animated)
+    }
+    
     public func push(_ controller: UIViewController, animated: Bool) {
         let currentControllers = viewControllers ?? []
         let newControllers = currentControllers + [controller]

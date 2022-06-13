@@ -14,7 +14,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window.makeKeyAndVisible()
         self.window = window
         
-        window.rootViewController = LoginFactory().build()
+        window.rootViewController = OnboardingFactory().build()
         
         return true
     }

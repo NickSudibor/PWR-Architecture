@@ -6,13 +6,13 @@ import SnapKit
 import RxSwift
 import RxCocoa
 
-final class LoginController: UIViewController {
-    private let viewModel: LoginViewModelProtocol
+final class EnterPhoneController: UIViewController {
+    private let viewModel: EnterPhoneViewModelProtocol
     private let disposeBag = DisposeBag()
     
     private let actionButton = UIButton(type: .system)
     
-    init(viewModel: LoginViewModelProtocol) {
+    init(viewModel: EnterPhoneViewModelProtocol) {
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
     }
@@ -31,11 +31,11 @@ final class LoginController: UIViewController {
 
 // MARK: - View Setup
 
-private extension LoginController {
+private extension EnterPhoneController {
     func bindUI() {
         actionButton.rx
             .tap
-            .map { _ in Login.Action.loginTapped }
+            .map { _ in EnterPhone.Action.confirmPhoneTapped }
             .bind(to: viewModel.actions)
             .disposed(by: disposeBag)
     }
@@ -43,7 +43,7 @@ private extension LoginController {
     func setupView() {
         view.backgroundColor = .white
         
-        actionButton.setTitle("LOGIN", for: .normal)
+        actionButton.setTitle("CONFIRM PHONE", for: .normal)
         actionButton.titleLabel?.font = UIFont.systemFont(ofSize: 17, weight: .bold)
         actionButton.setTitleColor(.white, for: .normal)
         actionButton.backgroundColor = UIColor.systemBlue
