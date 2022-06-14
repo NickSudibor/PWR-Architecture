@@ -10,9 +10,9 @@ public protocol ReplaceRootRoutingAction {
     )
 }
 
-// MARK: - Builder
+// MARK: - Box
 
-public final class ReplaceRootActionBuilder {
+public final class ReplaceRootActionBox {
     public let value: ReplaceRootRoutingAction
     
     init(_ value: ReplaceRootRoutingAction) {
@@ -20,8 +20,8 @@ public final class ReplaceRootActionBuilder {
     }
 }
 
-public extension ReplaceRootActionBuilder {
-    static func `default`() -> ReplaceRootActionBuilder {
+public extension ReplaceRootActionBox {
+    static func `default`() -> ReplaceRootActionBox {
         let action = DefaultReplaceRootAction()
         return .init(action)
     }

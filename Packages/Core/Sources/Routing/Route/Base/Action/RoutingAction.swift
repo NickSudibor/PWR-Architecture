@@ -11,9 +11,9 @@ public protocol RoutingAction {
     )
 }
 
-// MARK: - Builder
+// MARK: - Box
 
-public final class RoutingActionBuilder {
+public final class RoutingActionBox {
     public let value: RoutingAction
     
     public init(_ value: RoutingAction) {
@@ -21,18 +21,18 @@ public final class RoutingActionBuilder {
     }
 }
 
-public extension RoutingActionBuilder {
-    static func present() -> RoutingActionBuilder {
+public extension RoutingActionBox {
+    static func present() -> RoutingActionBox {
         let action = PresentAction()
         return .init(action)
     }
     
-    static func push() -> RoutingActionBuilder {
+    static func push() -> RoutingActionBox {
         let action = PushAction()
         return .init(action)
     }
     
-    static func pop() -> RoutingActionBuilder {
+    static func pop() -> RoutingActionBox {
         let action = PopAction()
         return .init(action)
     }

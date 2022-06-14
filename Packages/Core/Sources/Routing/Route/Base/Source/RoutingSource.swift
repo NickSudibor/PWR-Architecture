@@ -6,9 +6,9 @@ public protocol RoutingSource {
     func viewController() -> UIViewController?
 }
 
-// MARK: - Builder
+// MARK: - Box
 
-public final class RoutingSourceBuilder {
+public final class RoutingSourceBox {
     public let value: RoutingSource
     
     public init(_ value: RoutingSource) {
@@ -16,13 +16,13 @@ public final class RoutingSourceBuilder {
     }
 }
 
-public extension RoutingSourceBuilder {
-    static func topmost() -> RoutingSourceBuilder {
+public extension RoutingSourceBox {
+    static func topmost() -> RoutingSourceBox {
         let source = TopmostRoutingSource()
         return .init(source)
     }
     
-    static func concrete(_ controller: UIViewController) -> RoutingSourceBuilder {
+    static func concrete(_ controller: UIViewController) -> RoutingSourceBox {
         let source = ConcreteRoutingSource(controller)
         return .init(source)
     }

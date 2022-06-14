@@ -6,9 +6,9 @@ public protocol RoutingDestination {
     func viewController() -> UIViewController
 }
 
-// MARK: - Builder
+// MARK: - Box
 
-public final class RoutingDestinationBuilder {
+public final class RoutingDestinationBox {
     public let value: RoutingDestination
     
     public init(_ value: RoutingDestination) {
@@ -16,23 +16,23 @@ public final class RoutingDestinationBuilder {
     }
 }
 
-public extension RoutingDestinationBuilder {
-    static func build<FactoryType: Factory>(with factory: FactoryType) -> RoutingDestinationBuilder where FactoryType.Context == Void {
+public extension RoutingDestinationBox {
+    static func build<FactoryType: Factory>(with factory: FactoryType) -> RoutingDestinationBox where FactoryType.Context == Void {
         let destination = BuildRoutingDestination(factory: factory.asAnyFactory())
         return .init(destination)
     }
     
-    static func build<FactoryType: Factory>(with factory: FactoryType, and context: FactoryType.Context) -> RoutingDestinationBuilder {
+    static func build<FactoryType: Factory>(with factory: FactoryType, and context: FactoryType.Context) -> RoutingDestinationBox {
         let destination = BuildRoutingDestination(factory: factory.asAnyFactory(), context: context)
         return .init(destination)
     }
     
-    static func concrete(_ controller: UIViewController) -> RoutingDestinationBuilder {
+    static func concrete(_ controller: UIViewController) -> RoutingDestinationBox {
         let destination = ConcreteRoutingDestination(controller)
         return .init(destination)
     }
     
-    static func embed(_ destinations: [RoutingDestinationBuilder], in container: ContainerController) -> RoutingDestinationBuilder {
+    static func embed(_ destinations: [RoutingDestinationBox], in container: ContainerController) -> RoutingDestinationBox {
         let boxedDestinations = destinations.map { $0.value }
         let embedDestination = EmbedRoutingDestination(container: container, embedded: boxedDestinations)
         return .init(embedDestination)
