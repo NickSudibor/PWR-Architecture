@@ -6,34 +6,34 @@ public protocol RoutingDestination {
     func viewController() -> UIViewController
 }
 
-// MARK: - Box
+// MARK: - Builder
 
-public final class RoutingDestinationBox {
-    public let boxedDestination: RoutingDestination
+public final class RoutingDestinationBuilder {
+    public let value: RoutingDestination
     
-    public init(_ boxedDestination: RoutingDestination) {
-        self.boxedDestination = boxedDestination
+    public init(_ value: RoutingDestination) {
+        self.value = value
     }
 }
 
-public extension RoutingDestinationBox {
-    static func build<FactoryType: Factory>(with factory: FactoryType) -> RoutingDestinationBox where FactoryType.Context == Void {
+public extension RoutingDestinationBuilder {
+    static func build<FactoryType: Factory>(with factory: FactoryType) -> RoutingDestinationBuilder where FactoryType.Context == Void {
         let destination = BuildRoutingDestination(factory: factory.asAnyFactory())
         return .init(destination)
     }
     
-    static func build<FactoryType: Factory>(with factory: FactoryType, and context: FactoryType.Context) -> RoutingDestinationBox {
+    static func build<FactoryType: Factory>(with factory: FactoryType, and context: FactoryType.Context) -> RoutingDestinationBuilder {
         let destination = BuildRoutingDestination(factory: factory.asAnyFactory(), context: context)
         return .init(destination)
     }
     
-    static func concrete(_ controller: UIViewController) -> RoutingDestinationBox {
+    static func concrete(_ controller: UIViewController) -> RoutingDestinationBuilder {
         let destination = ConcreteRoutingDestination(controller)
         return .init(destination)
     }
     
-    static func embed(_ destinations: [RoutingDestinationBox], in container: ContainerController) -> RoutingDestinationBox {
-        let boxedDestinations = destinations.map { $0.boxedDestination }
+    static func embed(_ destinations: [RoutingDestinationBuilder], in container: ContainerController) -> RoutingDestinationBuilder {
+        let boxedDestinations = destinations.map { $0.value }
         let embedDestination = EmbedRoutingDestination(container: container, embedded: boxedDestinations)
         return .init(embedDestination)
     }

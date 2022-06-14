@@ -3,12 +3,12 @@
 import Foundation
 
 public struct ReplaceRootRoute {
-    public let destination: RoutingDestinationBox
-    public let action: ReplaceRootActionBox
+    public let destination: RoutingDestinationBuilder
+    public let action: ReplaceRootActionBuilder
     
     public init(
-        destination: RoutingDestinationBox,
-        action: ReplaceRootActionBox
+        destination: RoutingDestinationBuilder,
+        action: ReplaceRootActionBuilder
     ) {
         self.destination = destination
         self.action = action

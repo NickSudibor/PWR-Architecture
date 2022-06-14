@@ -3,14 +3,14 @@
 import Foundation
 
 public struct Route {
-    public let source: RoutingSourceBox
-    public let destination: RoutingDestinationBox
-    public let action: RoutingActionBox
+    public let source: RoutingSourceBuilder
+    public let destination: RoutingDestinationBuilder
+    public let action: RoutingActionBuilder
     
     public init(
-        source: RoutingSourceBox = .topmost(),
-        destination: RoutingDestinationBox,
-        action: RoutingActionBox
+        source: RoutingSourceBuilder = .topmost(),
+        destination: RoutingDestinationBuilder,
+        action: RoutingActionBuilder
     ) {
         self.source = source
         self.destination = destination
