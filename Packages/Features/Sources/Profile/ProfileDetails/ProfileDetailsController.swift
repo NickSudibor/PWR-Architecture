@@ -6,15 +6,15 @@ import SnapKit
 import RxSwift
 import RxCocoa
 
-final class FeedDetailsController: UIViewController {
-    private let viewModel: FeedDetailsViewModelProtocol
+final class ProfileDetailsController: UIViewController {
+    private let viewModel: ProfileDetailsViewModelProtocol
     private let disposeBag = DisposeBag()
     
     private let actionButton = UIButton(type: .system)
     private let backButton = UIButton(type: .system)
     private let contentStackView = UIStackView()
     
-    init(viewModel: FeedDetailsViewModelProtocol) {
+    init(viewModel: ProfileDetailsViewModelProtocol) {
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
         hidesBottomBarWhenPushed = true
@@ -34,23 +34,23 @@ final class FeedDetailsController: UIViewController {
 
 // MARK: - View Setup
 
-private extension FeedDetailsController {
+private extension ProfileDetailsController {
     func bindUI() {
         actionButton.rx
             .tap
-            .map { _ in FeedDetails.Action.settingsTapped }
+            .map { _ in ProfileDetails.Action.settingsTapped }
             .bind(to: viewModel.actions)
             .disposed(by: disposeBag)
         
         backButton.rx
             .tap
-            .map { _ in FeedDetails.Action.backTapped }
+            .map { _ in ProfileDetails.Action.backTapped }
             .bind(to: viewModel.actions)
             .disposed(by: disposeBag)
     }
     
     func setupView() {
-        title = "Feed Details"
+        title = "Profile Details"
         view.backgroundColor = .white
         
         actionButton.setTitle("SETTING", for: .normal)
