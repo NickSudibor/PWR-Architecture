@@ -32,9 +32,14 @@ public extension RoutingDestinationBox {
         return .init(destination)
     }
     
+    static func embed(_ destination: RoutingDestinationBox, in container: ContainerController) -> RoutingDestinationBox {
+        let embedDestination = EmbedRoutingDestination(container: container, embedded: [destination.value])
+        return .init(embedDestination)
+    }
+    
     static func embed(_ destinations: [RoutingDestinationBox], in container: ContainerController) -> RoutingDestinationBox {
-        let boxedDestinations = destinations.map { $0.value }
-        let embedDestination = EmbedRoutingDestination(container: container, embedded: boxedDestinations)
+        let destinationValues = destinations.map { $0.value }
+        let embedDestination = EmbedRoutingDestination(container: container, embedded: destinationValues)
         return .init(embedDestination)
     }
 }

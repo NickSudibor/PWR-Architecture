@@ -20,6 +20,8 @@
 		0C603A572806135F00077F30 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0C603A552806135F00077F30 /* LaunchScreen.storyboard */; };
 		0C96C31B2857DC7E00E55BF2 /* Router+EnterPhone.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C96C31A2857DC7E00E55BF2 /* Router+EnterPhone.swift */; };
 		0C96C31F28588C3700E55BF2 /* CommonRoutes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C96C31E28588C3700E55BF2 /* CommonRoutes.swift */; };
+		0C96C322285897E600E55BF2 /* Router+Feed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C96C321285897E600E55BF2 /* Router+Feed.swift */; };
+		0C96C3252858982700E55BF2 /* Router+Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C96C3242858982700E55BF2 /* Router+Profile.swift */; };
 		0CB14F0D28575B7E00DAAFA6 /* Routing in Frameworks */ = {isa = PBXBuildFile; productRef = 0CB14F0C28575B7E00DAAFA6 /* Routing */; };
 		0CB14F1028575BF800DAAFA6 /* Router+Onboarding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CB14F0F28575BF800DAAFA6 /* Router+Onboarding.swift */; };
 /* End PBXBuildFile section */
@@ -35,6 +37,8 @@
 		0C603A582806135F00077F30 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0C96C31A2857DC7E00E55BF2 /* Router+EnterPhone.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Router+EnterPhone.swift"; sourceTree = "<group>"; };
 		0C96C31E28588C3700E55BF2 /* CommonRoutes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonRoutes.swift; sourceTree = "<group>"; };
+		0C96C321285897E600E55BF2 /* Router+Feed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Router+Feed.swift"; sourceTree = "<group>"; };
+		0C96C3242858982700E55BF2 /* Router+Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Router+Profile.swift"; sourceTree = "<group>"; };
 		0CB14F0F28575BF800DAAFA6 /* Router+Onboarding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Router+Onboarding.swift"; sourceTree = "<group>"; };
 		0CE8357B282696DC0036F7FE /* Core */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Core; sourceTree = "<group>"; };
 		0CE8357C2826B2200036F7FE /* Features */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Features; sourceTree = "<group>"; };
@@ -113,11 +117,29 @@
 			path = "PWR-Architecture";
 			sourceTree = "<group>";
 		};
+		0C96C320285897D200E55BF2 /* Feed */ = {
+			isa = PBXGroup;
+			children = (
+				0C96C321285897E600E55BF2 /* Router+Feed.swift */,
+			);
+			path = Feed;
+			sourceTree = "<group>";
+		};
+		0C96C3232858981D00E55BF2 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				0C96C3242858982700E55BF2 /* Router+Profile.swift */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
 		0CB14F0928575B2100DAAFA6 /* Router */ = {
 			isa = PBXGroup;
 			children = (
 				0C96C31E28588C3700E55BF2 /* CommonRoutes.swift */,
 				0CB14F0E28575BC600DAAFA6 /* Login */,
+				0C96C320285897D200E55BF2 /* Feed */,
+				0C96C3232858981D00E55BF2 /* Profile */,
 			);
 			path = Router;
 			sourceTree = "<group>";
@@ -221,9 +243,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				0C016D5228103FED00A98DB8 /* UserManager.swift in Sources */,
+				0C96C3252858982700E55BF2 /* Router+Profile.swift in Sources */,
 				0C016D542810404C00A98DB8 /* AuthManager.swift in Sources */,
 				0C016D562810407400A98DB8 /* AppDependancyContainer.swift in Sources */,
 				0C96C31F28588C3700E55BF2 /* CommonRoutes.swift in Sources */,
+				0C96C322285897E600E55BF2 /* Router+Feed.swift in Sources */,
 				0C603A4B2806135F00077F30 /* AppDelegate.swift in Sources */,
 				0C96C31B2857DC7E00E55BF2 /* Router+EnterPhone.swift in Sources */,
 				0CB14F1028575BF800DAAFA6 /* Router+Onboarding.swift in Sources */,

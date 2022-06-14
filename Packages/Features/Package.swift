@@ -16,21 +16,21 @@ let package = Package(
         .target(
             name: "Login",
             dependencies: Dependencies.link(
-                localDependencies: [.PWRFoundation, .UIComponents],
+                localDependencies: [.PWRFoundation, .UIComponents, .Routing],
                 externalDependencies: [.RxSwift, .RxRelay, .RxCocoa]
             )
         ),
         .target(
             name: "Feed",
             dependencies: Dependencies.link(
-                localDependencies: [.UIComponents],
+                localDependencies: [.PWRFoundation, .UIComponents, .Routing],
                 externalDependencies: [.RxSwift, .RxRelay, .RxCocoa]
             )
         ),
         .target(
             name: "Profile",
             dependencies: Dependencies.link(
-                localDependencies: [.UIComponents],
+                localDependencies: [.PWRFoundation, .UIComponents, .Routing],
                 externalDependencies: [.RxSwift, .RxRelay, .RxCocoa]
             )
         ),

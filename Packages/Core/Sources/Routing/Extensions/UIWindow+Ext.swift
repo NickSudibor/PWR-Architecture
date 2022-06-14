@@ -7,7 +7,7 @@ public extension UIWindow {
         guard let rootController = rootViewController else { return nil }
         var topController = rootController
         while true {
-            if let presentedController = topController.presentedViewController, presentedController.isBeingDismissed {
+            if let presentedController = topController.presentedViewController, !presentedController.isBeingDismissed {
                 topController = presentedController
             } else if let containerController = topController as? ContainerController,
                       let visibleController = containerController.visibleController {
