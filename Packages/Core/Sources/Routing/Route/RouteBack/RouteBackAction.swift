@@ -21,8 +21,13 @@ public final class RouteBackActionBox {
 }
 
 public extension RouteBackActionBox {
-    static func `default`() -> RouteBackActionBox {
-        let action = DefaultRouteBackAction()
+    static func pop() -> RouteBackActionBox {
+        let action = PopAction()
+        return .init(action)
+    }
+    
+    static func dismiss() -> RouteBackActionBox {
+        let action = DismissAction()
         return .init(action)
     }
 }

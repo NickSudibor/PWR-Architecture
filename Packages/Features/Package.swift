@@ -37,7 +37,7 @@ let package = Package(
         .target(
             name: "Settings",
             dependencies: Dependencies.link(
-                localDependencies: [.UIComponents],
+                localDependencies: [.PWRFoundation, .UIComponents, .Routing],
                 externalDependencies: [.RxSwift, .RxRelay, .RxCocoa]
             )
         ),

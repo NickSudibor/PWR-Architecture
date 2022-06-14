@@ -2,12 +2,14 @@
 
 import UIKit
 
-public final class DefaultRouteBackAction: RouteBackRoutingAction {
+public final class DismissAction: RouteBackRoutingAction {
+    public init() { }
+    
     public func perform(
         on sourceController: UIViewController?,
         animated: Bool,
         completion: (() -> Void)?
     ) {
-        sourceController?.containerController?.pop(animated: animated)
+        sourceController?.dismiss(animated: animated, completion: completion)
     }
 }

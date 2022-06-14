@@ -7,7 +7,15 @@ extension Router {
     public func routeBack() {
         let route = RouteBack(
             source: .topmost(),
-            action: .default()
+            action: .pop()
+        )
+        navigateBack(with: route, animated: true)
+    }
+    
+    public func dismiss() {
+        let route = RouteBack(
+            source: .topmost(),
+            action: .dismiss()
         )
         navigateBack(with: route, animated: true)
     }

@@ -53,7 +53,7 @@ private extension FeedDetailsController {
         title = "Feed Details"
         view.backgroundColor = .white
         
-        actionButton.setTitle("SETTING", for: .normal)
+        actionButton.setTitle("SETTINGS", for: .normal)
         actionButton.titleLabel?.font = UIFont.systemFont(ofSize: 17, weight: .bold)
         actionButton.setTitleColor(.white, for: .normal)
         actionButton.backgroundColor = UIColor.systemBlue

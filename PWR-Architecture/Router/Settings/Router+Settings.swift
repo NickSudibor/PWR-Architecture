@@ -2,6 +2,6 @@
 
 import UIKit
 import Routing
-import Profile
+import Settings
 
-extension Router: ProfileDetailsRouter { } 
+extension Router: SettingsRouter { }
