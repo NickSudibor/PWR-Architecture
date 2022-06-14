@@ -42,6 +42,7 @@ private extension FeedController {
     }
     
     func setupView() {
+        title = "Feed"
         view.backgroundColor = .white
         
         actionButton.setTitle("FEED DETAILS", for: .normal)

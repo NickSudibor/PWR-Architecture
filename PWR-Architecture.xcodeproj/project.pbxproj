@@ -18,6 +18,7 @@
 		0C603A4B2806135F00077F30 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C603A4A2806135F00077F30 /* AppDelegate.swift */; };
 		0C603A542806135F00077F30 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0C603A532806135F00077F30 /* Assets.xcassets */; };
 		0C603A572806135F00077F30 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0C603A552806135F00077F30 /* LaunchScreen.storyboard */; };
+		0C8252632858BCDA00FD40C4 /* Router+FeedDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C8252622858BCDA00FD40C4 /* Router+FeedDetails.swift */; };
 		0C96C31B2857DC7E00E55BF2 /* Router+EnterPhone.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C96C31A2857DC7E00E55BF2 /* Router+EnterPhone.swift */; };
 		0C96C31F28588C3700E55BF2 /* CommonRoutes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C96C31E28588C3700E55BF2 /* CommonRoutes.swift */; };
 		0C96C322285897E600E55BF2 /* Router+Feed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C96C321285897E600E55BF2 /* Router+Feed.swift */; };
@@ -35,6 +36,7 @@
 		0C603A532806135F00077F30 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0C603A562806135F00077F30 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0C603A582806135F00077F30 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0C8252622858BCDA00FD40C4 /* Router+FeedDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Router+FeedDetails.swift"; sourceTree = "<group>"; };
 		0C96C31A2857DC7E00E55BF2 /* Router+EnterPhone.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Router+EnterPhone.swift"; sourceTree = "<group>"; };
 		0C96C31E28588C3700E55BF2 /* CommonRoutes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonRoutes.swift; sourceTree = "<group>"; };
 		0C96C321285897E600E55BF2 /* Router+Feed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Router+Feed.swift"; sourceTree = "<group>"; };
@@ -121,6 +123,7 @@
 			isa = PBXGroup;
 			children = (
 				0C96C321285897E600E55BF2 /* Router+Feed.swift */,
+				0C8252622858BCDA00FD40C4 /* Router+FeedDetails.swift */,
 			);
 			path = Feed;
 			sourceTree = "<group>";
@@ -243,6 +246,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0C016D5228103FED00A98DB8 /* UserManager.swift in Sources */,
+				0C8252632858BCDA00FD40C4 /* Router+FeedDetails.swift in Sources */,
 				0C96C3252858982700E55BF2 /* Router+Profile.swift in Sources */,
 				0C016D542810404C00A98DB8 /* AuthManager.swift in Sources */,
 				0C016D562810407400A98DB8 /* AppDependancyContainer.swift in Sources */,

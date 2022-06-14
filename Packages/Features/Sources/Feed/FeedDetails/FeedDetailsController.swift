@@ -6,15 +6,15 @@ import SnapKit
 import RxSwift
 import RxCocoa
 
-final class EnterPhoneController: UIViewController {
-    private let viewModel: EnterPhoneViewModelProtocol
+final class FeedDetailsController: UIViewController {
+    private let viewModel: FeedDetailsViewModelProtocol
     private let disposeBag = DisposeBag()
     
     private let actionButton = UIButton(type: .system)
     private let backButton = UIButton(type: .system)
     private let contentStackView = UIStackView()
     
-    init(viewModel: EnterPhoneViewModelProtocol) {
+    init(viewModel: FeedDetailsViewModelProtocol) {
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
     }
@@ -33,26 +33,26 @@ final class EnterPhoneController: UIViewController {
 
 // MARK: - View Setup
 
-private extension EnterPhoneController {
+private extension FeedDetailsController {
     func bindUI() {
         actionButton.rx
             .tap
-            .map { _ in EnterPhone.Action.confirmTapped }
+            .map { _ in FeedDetails.Action.settingsTapped }
             .bind(to: viewModel.actions)
             .disposed(by: disposeBag)
         
         backButton.rx
             .tap
-            .map { _ in EnterPhone.Action.backTapped }
+            .map { _ in FeedDetails.Action.backTapped }
             .bind(to: viewModel.actions)
             .disposed(by: disposeBag)
     }
     
     func setupView() {
-        title = "Enter Phone"
+        title = "Feed Details"
         view.backgroundColor = .white
         
-        actionButton.setTitle("CONFIRM", for: .normal)
+        actionButton.setTitle("SETTING", for: .normal)
         actionButton.titleLabel?.font = UIFont.systemFont(ofSize: 17, weight: .bold)
         actionButton.setTitleColor(.white, for: .normal)
         actionButton.backgroundColor = UIColor.systemBlue

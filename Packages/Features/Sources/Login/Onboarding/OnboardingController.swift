@@ -41,6 +41,7 @@ private extension OnboardingController {
     }
     
     func setupView() {
+        title = "Onboarding"
         view.backgroundColor = .white
         
         actionButton.setTitle("ENTER PHONE", for: .normal)

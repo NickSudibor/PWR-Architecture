@@ -42,6 +42,7 @@ private extension ProfileController {
     }
     
     func setupView() {
+        title = "Profile"
         view.backgroundColor = .white
         
         actionButton.setTitle("PROFILE DETAILS", for: .normal)
