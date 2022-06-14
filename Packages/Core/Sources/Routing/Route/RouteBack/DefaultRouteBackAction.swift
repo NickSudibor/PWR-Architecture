@@ -1,13 +1,10 @@
-//  Created by Nick Sudibor on 13.06.22.
+//  Created by Nick Sudibor on 14.06.22.
 
 import UIKit
 
-public final class PopAction: RoutingAction {
-    public init() { }
-    
+public final class DefaultRouteBackAction: RouteBackRoutingAction {
     public func perform(
         on sourceController: UIViewController?,
-        with destinationController: UIViewController,
         animated: Bool,
         completion: (() -> Void)?
     ) {

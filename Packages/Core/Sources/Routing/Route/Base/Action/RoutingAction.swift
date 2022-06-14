@@ -31,9 +31,4 @@ public extension RoutingActionBox {
         let action = PushAction()
         return .init(action)
     }
-    
-    static func pop() -> RoutingActionBox {
-        let action = PopAction()
-        return .init(action)
-    }
 }

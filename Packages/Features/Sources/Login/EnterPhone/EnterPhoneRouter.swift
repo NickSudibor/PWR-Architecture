@@ -3,5 +3,6 @@
 import Foundation
 
 public protocol EnterPhoneRouter {
-    func routeToConfirmPhone()
+    func routeToHome()
+    func routeBack()
 }

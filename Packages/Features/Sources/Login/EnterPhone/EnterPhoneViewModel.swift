@@ -34,8 +34,10 @@ private extension EnterPhoneViewModel {
     
     func processAction(_ action: EnterPhone.Action) {
         switch action {
-        case .confirmPhoneTapped:
-            router.routeToConfirmPhone()
+        case .confirmTapped:
+            router.routeToHome()
+        case .backTapped:
+            router.routeBack()
         }
     }
 }

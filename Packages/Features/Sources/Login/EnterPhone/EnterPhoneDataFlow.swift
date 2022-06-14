@@ -4,6 +4,7 @@ import Foundation
 
 enum EnterPhone {
     enum Action {
-        case confirmPhoneTapped
+        case confirmTapped
+        case backTapped
     }
 }

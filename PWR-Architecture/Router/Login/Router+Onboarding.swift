@@ -5,7 +5,7 @@ import Login
 import Routing
 
 extension Router {
-    func routeToOnboarding() {
+    public func routeToOnboarding() {
         let factory = OnboardingFactory(router: self)
         let route = ReplaceRootRoute(
             destination: .embed(
@@ -15,5 +15,16 @@ extension Router {
             action: .default()
         )
         navigate(with: route, animated: false)
+    }
+}
+
+extension Router: OnboardingRouter {
+    public func routeToEnterPhone() {
+        let factory = EnterPhoneFactory(router: self)
+        let route = Route(
+            destination: .build(with: factory),
+            action: .push()
+        )
+        navigate(with: route)
     }
 }

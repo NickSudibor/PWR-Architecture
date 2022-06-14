@@ -4,13 +4,8 @@ import UIKit
 import Login
 import Routing
 
-extension Router {
-    public func routeToEnterPhone() {
-        let factory = EnterPhoneFactory(router: self)
-        let route = Route(
-            destination: .build(with: factory),
-            action: .push()
-        )
-        navigate(with: route)
+extension Router: EnterPhoneRouter {
+    public func routeToHome() {
+        
     }
 }
