@@ -7,6 +7,11 @@ extension UINavigationController: ContainerController {
         return visibleViewController
     }
     
+    public var controllers: [UIViewController] {
+        return viewControllers
+    }
+    
+    
     public func setControllers(_ controllers: [UIViewController], animated: Bool) {
         setViewControllers(controllers, animated: animated)
     }

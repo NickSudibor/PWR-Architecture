@@ -26,4 +26,17 @@ public extension RoutingSourceBox {
         let source = ConcreteRoutingSource(controller)
         return .init(source)
     }
+    
+    static func findController<ViewController: UIViewController>(ofType controllerType: ViewController.Type) -> RoutingSourceBox {
+        let source = ClassRoutingSource<ViewController>()
+        return .init(source)
+    }
+    
+    static func findController<ViewController: UIViewController & ContextCheckable>(
+        ofType controllerType: ViewController.Type,
+        with context: ViewController.Context
+    ) -> RoutingSourceBox {
+        let source = ContextRoutingSource<ViewController>(context: context)
+        return .init(source)
+    }
 }

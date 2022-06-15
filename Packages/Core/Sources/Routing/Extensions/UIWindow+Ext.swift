@@ -17,4 +17,30 @@ public extension UIWindow {
             }
         }
     }
+    
+    func findController(using predicate: (UIViewController) -> Bool) -> UIViewController? {
+        guard let rootController = rootViewController else { return nil }
+        return findController(startingFrom: rootController, using: predicate)
+    }
+    
+    private func findController(
+        startingFrom originController: UIViewController,
+        using predicate: (UIViewController) -> Bool
+    ) -> UIViewController? {
+        if predicate(originController) {
+            return originController
+        }
+        if let container = originController as? ContainerController {
+            let results = container.controllers.compactMap { findController(startingFrom: $0, using: predicate) }
+            if let result = results.first {
+                return result
+            }
+        }
+        if let presentedController = originController.presentedViewController {
+            if let result = findController(startingFrom: presentedController, using: predicate) {
+                return result
+            }
+        }
+        return nil
+    }
 }
