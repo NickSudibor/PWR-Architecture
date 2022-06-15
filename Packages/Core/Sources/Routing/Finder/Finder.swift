@@ -2,7 +2,11 @@
 
 import UIKit
 
-public protocol ContextFinderProtocol {
+public protocol FinderProtocol {
+    func findController<ViewController: UIViewController>(
+        ofType controllerType: ViewController.Type
+    ) -> ViewController?
+    
     func findController<ViewController: UIViewController & ContextCheckable>(
         ofType controllerType: ViewController.Type,
         with context: ViewController.Context
@@ -15,11 +19,20 @@ public protocol ContextCheckable {
     func isTarget(for context: Context) -> Bool
 }
 
-public final class ContextFinder: ContextFinderProtocol {
+public final class Finder: FinderProtocol {
     private let windowProvider: WindowProvider
     
     public init(windowProvider: WindowProvider = KeyWindowProvider()) {
         self.windowProvider = windowProvider
+    }
+    
+    public func findController<ViewController: UIViewController>(
+        ofType controllerType: ViewController.Type
+    ) -> ViewController? {
+        let controller = windowProvider.window.findController(using: {
+            return $0 is ViewController
+        })
+        return controller as? ViewController
     }
     
     public func findController<ViewController: UIViewController & ContextCheckable>(
@@ -33,4 +46,3 @@ public final class ContextFinder: ContextFinderProtocol {
         return controller as? ViewController
     }
 }
-

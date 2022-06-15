@@ -3,9 +3,9 @@
 import UIKit
 
 public final class ClassRoutingSource<ViewController: UIViewController>: RoutingSource {
-    private let finder: ClassFinderProtocol
+    private let finder: FinderProtocol
     
-    public init(finder: ClassFinderProtocol = ClassFinder()) {
+    public init(finder: FinderProtocol = Finder()) {
         self.finder = finder
     }
     

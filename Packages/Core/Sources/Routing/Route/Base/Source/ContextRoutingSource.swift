@@ -3,10 +3,10 @@
 import UIKit
 
 public final class ContextRoutingSource<ViewController: UIViewController & ContextCheckable>: RoutingSource {
-    private let finder: ContextFinderProtocol
+    private let finder: FinderProtocol
     private let context: ViewController.Context
     
-    public init(finder: ContextFinderProtocol = ContextFinder(), context: ViewController.Context) {
+    public init(finder: FinderProtocol = Finder(), context: ViewController.Context) {
         self.finder = finder
         self.context = context
     }
