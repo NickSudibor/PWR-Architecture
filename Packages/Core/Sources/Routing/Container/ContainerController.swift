@@ -9,4 +9,5 @@ public protocol ContainerController: UIViewController {
     func setControllers(_ controllers: [UIViewController], animated: Bool)
     func push(_ controller: UIViewController, animated: Bool)
     func pop(animated: Bool)
+    func makeVisible(_ controller: UIViewController, animated: Bool)
 }

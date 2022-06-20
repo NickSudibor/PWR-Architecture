@@ -6,7 +6,7 @@ import SnapKit
 import RxSwift
 import RxCocoa
 
-final class ProfileController: UIViewController {
+public final class ProfileController: UIViewController {
     private let viewModel: ProfileViewModelProtocol
     private let disposeBag = DisposeBag()
     
@@ -22,7 +22,7 @@ final class ProfileController: UIViewController {
         fatalError("init(coder:) has not been implemented")
     }
     
-    override func viewDidLoad() {
+    public override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
         setupConstraints()

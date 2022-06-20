@@ -3,5 +3,6 @@
 import Foundation
 
 public protocol SettingsRouter {
+    func routeToProfileFromSettings()
     func dismiss()
 }

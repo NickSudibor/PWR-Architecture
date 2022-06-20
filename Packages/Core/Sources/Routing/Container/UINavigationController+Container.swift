@@ -4,7 +4,7 @@ import UIKit
 
 extension UINavigationController: ContainerController {
     public var visibleController: UIViewController? {
-        return visibleViewController
+        return topViewController
     }
     
     public var controllers: [UIViewController] {
@@ -22,5 +22,11 @@ extension UINavigationController: ContainerController {
     
     public func pop(animated: Bool) {
         popViewController(animated: animated)
+    }
+    
+    public func makeVisible(_ controller: UIViewController, animated: Bool) {
+        guard controllers.contains(controller) else { return }
+        guard topViewController != controller else { return }
+        popToViewController(controller, animated: animated)
     }
 }

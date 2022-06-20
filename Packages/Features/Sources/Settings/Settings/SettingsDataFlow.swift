@@ -4,6 +4,7 @@ import Foundation
 
 enum Settings {
     enum Action {
+        case profileTapped
         case closeTapped
     }
 }

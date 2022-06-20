@@ -34,6 +34,8 @@ private extension SettingsViewModel {
     
     func processAction(_ action: Settings.Action) {
         switch action {
+        case .profileTapped:
+            router.routeToProfileFromSettings()
         case .closeTapped:
             router.dismiss()
         }

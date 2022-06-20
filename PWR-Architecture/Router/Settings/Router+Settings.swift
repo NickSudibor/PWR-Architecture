@@ -3,5 +3,14 @@
 import UIKit
 import Routing
 import Settings
+import Profile
 
-extension Router: SettingsRouter { }
+extension Router: SettingsRouter {
+    public func routeToProfileFromSettings() {
+        let route = RouteBack(
+            source: .findController(ofType: ProfileController.self),
+            action: .makeVisible()
+        )
+        navigateBack(with: route)
+    }
+}

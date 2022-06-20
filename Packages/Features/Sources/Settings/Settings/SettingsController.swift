@@ -10,7 +10,9 @@ final class SettingsController: UIViewController {
     private let viewModel: SettingsViewModelProtocol
     private let disposeBag = DisposeBag()
     
-    private let actionButton = UIButton(type: .system)
+    private let profileButton = UIButton(type: .system)
+    private let backButton = UIButton(type: .system)
+    private let contentStackView = UIStackView()
     
     init(viewModel: SettingsViewModelProtocol) {
         self.viewModel = viewModel
@@ -34,9 +36,15 @@ final class SettingsController: UIViewController {
 
 private extension SettingsController {
     func bindUI() {
-        actionButton.rx
+        backButton.rx
             .tap
             .map { _ in Settings.Action.closeTapped }
+            .bind(to: viewModel.actions)
+            .disposed(by: disposeBag)
+        
+        profileButton.rx
+            .tap
+            .map { _ in Settings.Action.profileTapped }
             .bind(to: viewModel.actions)
             .disposed(by: disposeBag)
     }
@@ -45,11 +53,22 @@ private extension SettingsController {
         title = "Settings"
         view.backgroundColor = .white
         
-        actionButton.setTitle("CLOSE", for: .normal)
-        actionButton.titleLabel?.font = UIFont.systemFont(ofSize: 17, weight: .bold)
-        actionButton.setTitleColor(.white, for: .normal)
-        actionButton.backgroundColor = UIColor.systemBlue
-        actionButton.layer.cornerRadius = 16
+        profileButton.setTitle("PROFILE", for: .normal)
+        profileButton.titleLabel?.font = UIFont.systemFont(ofSize: 17, weight: .bold)
+        profileButton.setTitleColor(.white, for: .normal)
+        profileButton.backgroundColor = UIColor.systemBlue
+        profileButton.layer.cornerRadius = 16
+        
+        backButton.setTitle("CLOSE", for: .normal)
+        backButton.titleLabel?.font = UIFont.systemFont(ofSize: 17, weight: .bold)
+        backButton.setTitleColor(.white, for: .normal)
+        backButton.backgroundColor = UIColor.systemBlue
+        backButton.layer.cornerRadius = 16
+        
+        contentStackView.axis = .vertical
+        contentStackView.distribution = .fill
+        contentStackView.alignment = .center
+        contentStackView.spacing = 15
     }
     
     func setupTabBarItem() {
@@ -57,12 +76,21 @@ private extension SettingsController {
     }
     
     func setupConstraints() {
-        [actionButton].forEach { view.addSubview($0) }
+        [contentStackView].forEach { view.addSubview($0) }
+        contentStackView.addArrangedSubview(profileButton)
+        contentStackView.addArrangedSubview(backButton)
         
-        actionButton.snp.makeConstraints { make in
-            make.center.equalToSuperview()
+        profileButton.snp.makeConstraints { make in
             make.width.equalToSuperview().multipliedBy(0.75)
             make.height.equalTo(50)
+        }
+        backButton.snp.makeConstraints { make in
+            make.width.equalToSuperview().multipliedBy(0.75)
+            make.height.equalTo(50)
+        }
+        contentStackView.snp.makeConstraints { make in
+            make.center.equalToSuperview()
+            make.width.equalToSuperview()
         }
     }
 }

@@ -43,4 +43,12 @@ public extension UIWindow {
         }
         return nil
     }
+    
+    func makeVisible(_ controller: UIViewController, animated: Bool) {
+        guard let parentController = controller.parent else { return }
+        if let container = parentController as? ContainerController {
+            container.makeVisible(controller, animated: animated)
+        }
+        makeVisible(parentController, animated: animated)
+    }
 }

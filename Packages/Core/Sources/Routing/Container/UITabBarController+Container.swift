@@ -28,4 +28,10 @@ extension UITabBarController: ContainerController {
         let newControllers = Array(currentControllers.dropLast())
         setViewControllers(newControllers, animated: animated)
     }
+    
+    public func makeVisible(_ controller: UIViewController, animated: Bool) {
+        guard controllers.contains(controller) else { return }
+        guard selectedViewController != controller else { return }
+        selectedViewController = controller
+    }
 }

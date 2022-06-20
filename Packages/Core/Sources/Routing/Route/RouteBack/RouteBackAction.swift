@@ -30,4 +30,9 @@ public extension RouteBackActionBox {
         let action = DismissAction()
         return .init(action)
     }
+    
+    static func makeVisible() -> RouteBackActionBox {
+        let action = MakeVisibleAction()
+        return .init(action)
+    }
 }
