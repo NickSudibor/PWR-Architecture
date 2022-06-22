@@ -7,9 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0C016D5228103FED00A98DB8 /* UserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C016D5128103FED00A98DB8 /* UserManager.swift */; };
-		0C016D542810404C00A98DB8 /* AuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C016D532810404C00A98DB8 /* AuthManager.swift */; };
-		0C016D562810407400A98DB8 /* AppDependancyContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C016D552810407400A98DB8 /* AppDependancyContainer.swift */; };
 		0C3DE1202847691E007B7811 /* UIComponents in Frameworks */ = {isa = PBXBuildFile; productRef = 0C3DE11F2847691E007B7811 /* UIComponents */; };
 		0C3DE12228476921007B7811 /* Feed in Frameworks */ = {isa = PBXBuildFile; productRef = 0C3DE12128476921007B7811 /* Feed */; };
 		0C3DE12428476925007B7811 /* Login in Frameworks */ = {isa = PBXBuildFile; productRef = 0C3DE12328476925007B7811 /* Login */; };
@@ -30,9 +27,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		0C016D5128103FED00A98DB8 /* UserManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserManager.swift; sourceTree = "<group>"; };
-		0C016D532810404C00A98DB8 /* AuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthManager.swift; sourceTree = "<group>"; };
-		0C016D552810407400A98DB8 /* AppDependancyContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDependancyContainer.swift; sourceTree = "<group>"; };
 		0C603A472806135F00077F30 /* PWR-Architecture.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "PWR-Architecture.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0C603A4A2806135F00077F30 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0C603A532806135F00077F30 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -67,20 +61,10 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		0C016D5028103FB500A98DB8 /* Logic */ = {
-			isa = PBXGroup;
-			children = (
-				0C016D532810404C00A98DB8 /* AuthManager.swift */,
-				0C016D5128103FED00A98DB8 /* UserManager.swift */,
-			);
-			path = Logic;
-			sourceTree = "<group>";
-		};
 		0C016D64281053AA00A98DB8 /* App */ = {
 			isa = PBXGroup;
 			children = (
 				0C603A4A2806135F00077F30 /* AppDelegate.swift */,
-				0C016D552810407400A98DB8 /* AppDependancyContainer.swift */,
 			);
 			path = App;
 			sourceTree = "<group>";
@@ -115,7 +99,6 @@
 			children = (
 				0CB14F0928575B2100DAAFA6 /* Router */,
 				0C016D64281053AA00A98DB8 /* App */,
-				0C016D5028103FB500A98DB8 /* Logic */,
 				0C603A532806135F00077F30 /* Assets.xcassets */,
 				0C603A552806135F00077F30 /* LaunchScreen.storyboard */,
 				0C603A582806135F00077F30 /* Info.plist */,
@@ -259,12 +242,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0C016D5228103FED00A98DB8 /* UserManager.swift in Sources */,
 				0CE6A0B52858C98B00D5B549 /* Router+Settings.swift in Sources */,
 				0C8252632858BCDA00FD40C4 /* Router+FeedDetails.swift in Sources */,
 				0C96C3252858982700E55BF2 /* Router+Profile.swift in Sources */,
-				0C016D542810404C00A98DB8 /* AuthManager.swift in Sources */,
-				0C016D562810407400A98DB8 /* AppDependancyContainer.swift in Sources */,
 				0C96C31F28588C3700E55BF2 /* CommonRoutes.swift in Sources */,
 				0C96C322285897E600E55BF2 /* Router+Feed.swift in Sources */,
 				0C603A4B2806135F00077F30 /* AppDelegate.swift in Sources */,
