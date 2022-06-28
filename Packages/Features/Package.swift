@@ -9,7 +9,8 @@ let package = Package(
         .library(name: "Login", targets: ["Login"]),
         .library(name: "Feed", targets: ["Feed"]),
         .library(name: "Profile", targets: ["Profile"]),
-        .library(name: "Settings", targets: ["Settings"])
+        .library(name: "Settings", targets: ["Settings"]),
+        .library(name: "Time", targets: ["Time"])
     ],
     dependencies: LocalDependency.sources + ExternalDependency.sources,
     targets: [
@@ -41,6 +42,13 @@ let package = Package(
                 externalDependencies: [.RxSwift, .RxRelay, .RxCocoa]
             )
         ),
+        .target(
+            name: "Time",
+            dependencies: Dependencies.link(
+                localDependencies: [.PWRFoundation, .UIComponents, .Routing],
+                externalDependencies: [.RxSwift, .RxRelay, .RxCocoa]
+            )
+        )
     ]
 )
 

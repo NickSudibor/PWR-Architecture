@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0C36CDCE286B72B40008E18B /* Time in Frameworks */ = {isa = PBXBuildFile; productRef = 0C36CDCD286B72B40008E18B /* Time */; };
+		0C36CDD1286B72CE0008E18B /* Router+Time.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C36CDD0286B72CE0008E18B /* Router+Time.swift */; };
 		0C3DE1202847691E007B7811 /* UIComponents in Frameworks */ = {isa = PBXBuildFile; productRef = 0C3DE11F2847691E007B7811 /* UIComponents */; };
 		0C3DE12228476921007B7811 /* Feed in Frameworks */ = {isa = PBXBuildFile; productRef = 0C3DE12128476921007B7811 /* Feed */; };
 		0C3DE12428476925007B7811 /* Login in Frameworks */ = {isa = PBXBuildFile; productRef = 0C3DE12328476925007B7811 /* Login */; };
@@ -27,6 +29,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0C36CDD0286B72CE0008E18B /* Router+Time.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Router+Time.swift"; sourceTree = "<group>"; };
 		0C603A472806135F00077F30 /* PWR-Architecture.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "PWR-Architecture.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0C603A4A2806135F00077F30 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0C603A532806135F00077F30 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -52,6 +55,7 @@
 				0C3DE12628476925007B7811 /* Profile in Frameworks */,
 				0C3DE12828476925007B7811 /* Settings in Frameworks */,
 				0C3DE12428476925007B7811 /* Login in Frameworks */,
+				0C36CDCE286B72B40008E18B /* Time in Frameworks */,
 				0CB14F0D28575B7E00DAAFA6 /* Routing in Frameworks */,
 				0C3DE12228476921007B7811 /* Feed in Frameworks */,
 				0C3DE1202847691E007B7811 /* UIComponents in Frameworks */,
@@ -67,6 +71,14 @@
 				0C603A4A2806135F00077F30 /* AppDelegate.swift */,
 			);
 			path = App;
+			sourceTree = "<group>";
+		};
+		0C36CDCF286B72BF0008E18B /* Time */ = {
+			isa = PBXGroup;
+			children = (
+				0C36CDD0286B72CE0008E18B /* Router+Time.swift */,
+			);
+			path = Time;
 			sourceTree = "<group>";
 		};
 		0C3DE11E284768D1007B7811 /* Frameworks */ = {
@@ -132,6 +144,7 @@
 				0C96C320285897D200E55BF2 /* Feed */,
 				0C96C3232858981D00E55BF2 /* Profile */,
 				0CE6A0B32858C97C00D5B549 /* Settings */,
+				0C36CDCF286B72BF0008E18B /* Time */,
 			);
 			path = Router;
 			sourceTree = "<group>";
@@ -185,6 +198,7 @@
 				0C3DE12528476925007B7811 /* Profile */,
 				0C3DE12728476925007B7811 /* Settings */,
 				0CB14F0C28575B7E00DAAFA6 /* Routing */,
+				0C36CDCD286B72B40008E18B /* Time */,
 			);
 			productName = "PWR-Architecture";
 			productReference = 0C603A472806135F00077F30 /* PWR-Architecture.app */;
@@ -243,6 +257,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0CE6A0B52858C98B00D5B549 /* Router+Settings.swift in Sources */,
+				0C36CDD1286B72CE0008E18B /* Router+Time.swift in Sources */,
 				0C8252632858BCDA00FD40C4 /* Router+FeedDetails.swift in Sources */,
 				0C96C3252858982700E55BF2 /* Router+Profile.swift in Sources */,
 				0C96C31F28588C3700E55BF2 /* CommonRoutes.swift in Sources */,
@@ -466,6 +481,10 @@
 /* End XCConfigurationList section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		0C36CDCD286B72B40008E18B /* Time */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Time;
+		};
 		0C3DE11F2847691E007B7811 /* UIComponents */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = UIComponents;
