@@ -6,19 +6,17 @@ import RxSwift
 import RxRelay
 import RxCocoa
 
-protocol TimeViewModelProtocol {
+protocol TimeViewModelProtocol: AnyObject {
     var actions: AnyObserver<Time.Action> { get }
-    var viewState: Observable<Time.ViewState> { get }
 }
 
 final class TimeViewModel: TimeViewModelProtocol {
     private let presenter: TimePresenterProtocol
+    
     private let actionsRelay = PublishRelay<Time.Action>()
-    private let viewStateRelay = PublishRelay<Time.ViewState>()
     private let disposeBag = DisposeBag()
     
     var actions: AnyObserver<Time.Action> { actionsRelay.asObserver() }
-    var viewState: Observable<Time.ViewState> { viewStateRelay.asObservable() }
     
     init(presenter: TimePresenterProtocol) {
         self.presenter = presenter
@@ -26,17 +24,16 @@ final class TimeViewModel: TimeViewModelProtocol {
     }
 }
     
-// MARK: - View State
+// MARK: - State
     
 private extension TimeViewModel {
-    func updateViewState() {
+    func updateState() {
         let currentTime = Date()
         let state = Time.State(
             time: currentTime,
             partOfTheDay: partOfTheDay(from: currentTime)
         )
-        let viewState = presenter.viewState(from: state)
-        viewStateRelay.accept(viewState)
+        presenter.state.onNext(state)
     }
 }
     
@@ -52,7 +49,7 @@ private extension TimeViewModel {
     func processAction(_ action: Time.Action) {
         switch action {
         case .viewLoaded:
-            updateViewState()
+            updateState()
         }
     }
 }

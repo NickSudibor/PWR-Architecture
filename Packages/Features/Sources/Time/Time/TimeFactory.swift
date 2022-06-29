@@ -10,6 +10,7 @@ public final class TimeFactory: Factory {
         let presenter = TimePresenter()
         let viewModel = TimeViewModel(presenter: presenter)
         let controller = TimeController(viewModel: viewModel)
+        presenter.controller = controller
         return controller
     }
 }

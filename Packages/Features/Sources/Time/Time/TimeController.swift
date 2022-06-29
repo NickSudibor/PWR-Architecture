@@ -3,12 +3,20 @@
 import UIKit
 import SnapKit
 import RxSwift
+import RxRelay
 
-final class TimeController: UIViewController {
+protocol TimeControllerProtocol: AnyObject {
+    var viewState: AnyObserver<Time.ViewState> { get }
+}
+
+final class TimeController: UIViewController, TimeControllerProtocol {
     private let viewModel: TimeViewModelProtocol
-    private let disposeBag = DisposeBag()
     
     private let infoView = TimeInfoView()
+    private let viewStateRelay = PublishRelay<Time.ViewState>()
+    private let disposeBag = DisposeBag()
+    
+    var viewState: AnyObserver<Time.ViewState> { viewStateRelay.asObserver() }
     
     init(viewModel: TimeViewModelProtocol) {
         self.viewModel = viewModel
@@ -33,8 +41,7 @@ final class TimeController: UIViewController {
 
 private extension TimeController {
     func bindViewState() {
-        viewModel
-            .viewState
+        viewStateRelay
             .bind(onNext: processViewState(_:))
             .disposed(by: disposeBag)
     }
