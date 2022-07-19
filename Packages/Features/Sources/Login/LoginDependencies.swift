@@ -2,11 +2,16 @@
 
 import Foundation
 import PWRFoundation
+import Routing
 
 public final class LoginDependencies: DependencyContainer {
     public init() { }
     
     public func register(using resolver: Resolver) {
+        // Public
+        resolver.register(AnyRouter<LoginIncomingRoute>.self, factory: { AnyRouter(LoginRouter()) }).scope(.application)
         
+        // Internal
+        resolver.register(LoginFactoryProtocol.self, factory: { LoginFactory() }).scope(.application)
     }
 }

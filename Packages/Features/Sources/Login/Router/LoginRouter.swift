@@ -1,6 +1,7 @@
 //  Created by Nick Sudibor on 19.07.22.
 
 import UIKit
+import PWRFoundation
 import Routing
 import RxSwift
 
@@ -8,15 +9,9 @@ public enum LoginIncomingRoute {
     case enterPhone
 }
 
-final class LoginRouter: RouterTrait {
-    typealias IncomingRoute = LoginIncomingRoute
-    
-    private let factory: LoginFactoryProtocol
+final class LoginRouter: RouterTrait {    
+    @Injected private var factory: LoginFactoryProtocol
     private let disposeBag = DisposeBag()
-    
-    init(factory: LoginFactoryProtocol = LoginFactory()) {
-        self.factory = factory
-    }
     
     func process(_ incomingRoute: LoginIncomingRoute) {
         switch incomingRoute {

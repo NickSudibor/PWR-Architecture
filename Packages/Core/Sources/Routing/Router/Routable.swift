@@ -25,7 +25,7 @@ public extension Routable {
             return relay
         }
         let newRelay = PublishRelay<Route>()
-        objc_setAssociatedObject(self, &relayContext, relayContext, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
+        objc_setAssociatedObject(self, &relayContext, newRelay, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
         return newRelay
     }
     
