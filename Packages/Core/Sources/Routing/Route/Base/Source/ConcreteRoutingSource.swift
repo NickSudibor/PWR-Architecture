@@ -9,7 +9,7 @@ public final class ConcreteRoutingSource: RoutingSource {
         self.controller = controller
     }
     
-    public func viewController() -> UIViewController? {
+    public func viewController() throws -> UIViewController {
         return controller
     }
 }

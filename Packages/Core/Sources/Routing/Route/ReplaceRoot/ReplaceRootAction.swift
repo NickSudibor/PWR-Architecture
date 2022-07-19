@@ -6,7 +6,7 @@ public protocol ReplaceRootRoutingAction {
     func perform(
         with destinationController: UIViewController,
         animated: Bool,
-        completion: (() -> Void)?
+        completion: ((RoutingResult) -> Void)?
     )
 }
 

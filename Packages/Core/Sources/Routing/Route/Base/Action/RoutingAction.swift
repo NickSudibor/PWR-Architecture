@@ -4,10 +4,10 @@ import UIKit
 
 public protocol RoutingAction {
     func perform(
-        on sourceController: UIViewController?,
+        on sourceController: UIViewController,
         with destinationController: UIViewController,
         animated: Bool,
-        completion: (() -> Void)?
+        completion: ((RoutingResult) -> Void)?
     )
 }
 

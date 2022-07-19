@@ -6,10 +6,10 @@ public final class DismissAction: RouteBackRoutingAction {
     public init() { }
     
     public func perform(
-        on sourceController: UIViewController?,
+        on sourceController: UIViewController,
         animated: Bool,
-        completion: (() -> Void)?
+        completion: ((RoutingResult) -> Void)?
     ) {
-        sourceController?.dismiss(animated: animated, completion: completion)
+        sourceController.dismiss(animated: animated, completion: { completion?(.success) })
     }
 }

@@ -9,7 +9,11 @@ public final class TopmostRoutingSource: RoutingSource {
         self.finder = finder
     }
     
-    public func viewController() -> UIViewController? {
-        return finder.topmostController()
+    public func viewController() throws -> UIViewController {
+        if let controller = finder.topmostController() {
+            return controller
+        } else {
+            throw RoutingError.topmostControllerIsMissing
+        }
     }
 }

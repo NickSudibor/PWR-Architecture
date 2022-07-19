@@ -3,19 +3,23 @@
 import UIKit
 
 public final class MakeVisibleAction: RouteBackRoutingAction {
-    private let finder: FinderProtocol
-    
-    public init(finder: FinderProtocol = Finder()) {
-        self.finder = finder
-    }
+    public init() { }
     
     public func perform(
-        on sourceController: UIViewController?,
+        on sourceController: UIViewController,
         animated: Bool,
-        completion: (() -> Void)?
+        completion: ((RoutingResult) -> Void)?
     ) {
-        guard let sourceController = sourceController else { return }
         sourceController.dismiss(animated: true)
-        finder.makeVisible(sourceController, animated: animated)
+        makeVisible(sourceController, animated: animated)
+        completion?(.success)
+    }
+    
+    private func makeVisible(_ controller: UIViewController, animated: Bool) {
+        guard let parentController = controller.parent else { return }
+        if let container = parentController as? ContainerController {
+            container.makeVisible(controller, animated: animated)
+        }
+        makeVisible(parentController, animated: animated)
     }
 }

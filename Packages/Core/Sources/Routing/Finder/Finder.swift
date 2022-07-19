@@ -4,7 +4,6 @@ import UIKit
 
 public protocol FinderProtocol {
     func topmostController() -> UIViewController?
-    func makeVisible(_ controller: UIViewController, animated: Bool)
     
     func findController<ViewController: UIViewController>(
         ofType controllerType: ViewController.Type
@@ -23,12 +22,8 @@ public final class Finder: FinderProtocol {
     public init(windowProvider: WindowProvider = KeyWindowProvider()) {
         self.windowProvider = windowProvider
     }
-}
-
-// MARK: - Base
-
-public extension Finder {
-    func topmostController() -> UIViewController? {
+    
+    public func topmostController() -> UIViewController? {
         guard let rootController = window.rootViewController else { return nil }
         var topController = rootController
         while true {
@@ -41,14 +36,6 @@ public extension Finder {
                 return topController
             }
         }
-    }
-    
-    func makeVisible(_ controller: UIViewController, animated: Bool) {
-        guard let parentController = controller.parent else { return }
-        if let container = parentController as? ContainerController {
-            container.makeVisible(controller, animated: animated)
-        }
-        makeVisible(parentController, animated: animated)
     }
 }
 

@@ -9,7 +9,11 @@ public final class ClassRoutingSource<ViewController: UIViewController>: Routing
         self.finder = finder
     }
     
-    public func viewController() -> UIViewController? {
-        return finder.findController(ofType: ViewController.self)
+    public func viewController() throws -> UIViewController {
+        if let controller = finder.findController(ofType: ViewController.self) {
+            return controller
+        } else {
+            throw RoutingError.controllerNotFound
+        }
     }
 }

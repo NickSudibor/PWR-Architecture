@@ -4,12 +4,8 @@ import UIKit
 
 public extension UIViewController {
     var containerController: ContainerController? {
-        if let parent = parent {
-            if let container = parent as? ContainerController {
-                return container
-            } else {
-                return parent.containerController
-            }
+        if let parent = parent, let container = parent as? ContainerController {
+            return container
         } else {
             return nil
         }

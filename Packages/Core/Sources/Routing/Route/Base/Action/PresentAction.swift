@@ -6,11 +6,11 @@ public final class PresentAction: RoutingAction {
     public init() { }
     
     public func perform(
-        on sourceController: UIViewController?,
+        on sourceController: UIViewController,
         with destinationController: UIViewController,
         animated: Bool,
-        completion: (() -> Void)?
+        completion: ((RoutingResult) -> Void)?
     ) {
-        sourceController?.present(destinationController, animated: animated, completion: completion)
+        sourceController.present(destinationController, animated: animated, completion: { completion?(.success) })
     }
 }

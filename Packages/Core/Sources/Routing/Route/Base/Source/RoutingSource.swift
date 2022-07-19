@@ -3,7 +3,7 @@
 import UIKit
 
 public protocol RoutingSource {
-    func viewController() -> UIViewController?
+    func viewController() throws -> UIViewController
 }
 
 // MARK: - Box

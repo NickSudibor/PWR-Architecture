@@ -4,9 +4,9 @@ import UIKit
 
 public protocol RouteBackRoutingAction {
     func perform(
-        on sourceController: UIViewController?,
+        on sourceController: UIViewController,
         animated: Bool,
-        completion: (() -> Void)?
+        completion: ((RoutingResult) -> Void)?
     )
 }
 

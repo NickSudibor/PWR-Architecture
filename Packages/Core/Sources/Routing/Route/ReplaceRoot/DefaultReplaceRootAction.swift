@@ -12,8 +12,9 @@ public final class DefaultReplaceRootAction: ReplaceRootRoutingAction {
     public func perform(
         with destinationController: UIViewController,
         animated: Bool,
-        completion: (() -> Void)?
+        completion: ((RoutingResult) -> Void)?
     ) {
         windowProvider.window.rootViewController = destinationController
+        completion?(.success)
     }
 }

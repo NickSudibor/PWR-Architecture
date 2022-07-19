@@ -6,10 +6,15 @@ public final class PopAction: RouteBackRoutingAction {
     public init() { }
     
     public func perform(
-        on sourceController: UIViewController?,
+        on sourceController: UIViewController,
         animated: Bool,
-        completion: (() -> Void)?
+        completion: ((RoutingResult) -> Void)?
     ) {
-        sourceController?.containerController?.pop(animated: animated)
+        guard let container = sourceController.containerController else {
+            completion?(.failure(RoutingError.containerControllerIsMissing))
+            return
+        }
+        container.pop(animated: animated)
+        completion?(.success)
     }
 }

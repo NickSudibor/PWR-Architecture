@@ -11,7 +11,11 @@ public final class ContextRoutingSource<ViewController: UIViewController & Conte
         self.context = context
     }
     
-    public func viewController() -> UIViewController? {
-        return finder.findController(ofType: ViewController.self, with: context)
+    public func viewController() throws -> UIViewController {
+        if let controller = finder.findController(ofType: ViewController.self, with: context) {
+            return controller
+        } else {
+            throw RoutingError.controllerNotFound
+        }
     }
 }

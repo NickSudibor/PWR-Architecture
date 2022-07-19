@@ -6,11 +6,16 @@ public final class PushAction: RoutingAction {
     public init() { }
     
     public func perform(
-        on sourceController: UIViewController?,
+        on sourceController: UIViewController,
         with destinationController: UIViewController,
         animated: Bool,
-        completion: (() -> Void)?
+        completion: ((RoutingResult) -> Void)?
     ) {
-        sourceController?.containerController?.push(destinationController, animated: animated)
+        guard let container = sourceController.containerController else {
+            completion?(.failure(RoutingError.containerControllerIsMissing))
+            return
+        }
+        container.push(destinationController, animated: animated)        
+        completion?(.success)
     }
 }
