@@ -3,13 +3,13 @@
 import UIKit
 
 public final class TopmostRoutingSource: RoutingSource {
-    private let windowProvider: WindowProvider
+    private let finder: FinderProtocol
     
-    public init(windowProvider: WindowProvider = KeyWindowProvider()) {
-        self.windowProvider = windowProvider
+    public init(finder: FinderProtocol = Finder()) {
+        self.finder = finder
     }
     
     public func viewController() -> UIViewController? {
-        return windowProvider.window.topmostController
+        return finder.topmostController()
     }
 }

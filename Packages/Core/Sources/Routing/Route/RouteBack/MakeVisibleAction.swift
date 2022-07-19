@@ -3,10 +3,10 @@
 import UIKit
 
 public final class MakeVisibleAction: RouteBackRoutingAction {
-    private let windowProvider: WindowProvider
+    private let finder: FinderProtocol
     
-    public init(windowProvider: WindowProvider = KeyWindowProvider()) {
-        self.windowProvider = windowProvider
+    public init(finder: FinderProtocol = Finder()) {
+        self.finder = finder
     }
     
     public func perform(
@@ -16,6 +16,6 @@ public final class MakeVisibleAction: RouteBackRoutingAction {
     ) {
         guard let sourceController = sourceController else { return }
         sourceController.dismiss(animated: true)
-        windowProvider.window.makeVisible(sourceController, animated: animated)
+        finder.makeVisible(sourceController, animated: animated)
     }
 }
