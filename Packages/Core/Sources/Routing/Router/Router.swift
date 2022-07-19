@@ -2,33 +2,21 @@
 
 import UIKit
 
-public protocol Router { }
+public protocol Router {
+    associatedtype IncomingRoute
+    func process(_ incomingRoute: IncomingRoute)
+}
 
-public extension Router {
-    func navigate(with route: Route, animated: Bool = true, completion: ((RoutingResult) -> Void)? = nil) {
-        do {
-            let sourceController = try route.source.value.viewController()
-            let destinationController = route.destination.value.viewController()
-            let action = route.action.value
-            action.perform(on: sourceController, with: destinationController, animated: animated, completion: completion)
-        } catch {
-            completion?(.failure(error))
-        }
+// MARK: - AnyRouter
+
+public final class AnyRouter<IncomingRoute>: Router {
+    private let _process: (IncomingRoute) -> ()
+    
+    public init<Concrete: Router>(_ concrete: Concrete) where Concrete.IncomingRoute == IncomingRoute {
+        _process = concrete.process(_:)
     }
     
-    func navigate(with route: ReplaceRootRoute, animated: Bool = true, completion: ((RoutingResult) -> Void)? = nil) {
-        let destinationController = route.destination.value.viewController()
-        let action = route.action.value
-        action.perform(with: destinationController, animated: animated, completion: completion)
-    }
-    
-    func navigateBack(with route: RouteBack, animated: Bool = true, completion: ((RoutingResult) -> Void)? = nil) {
-        do {
-            let sourceController = try route.source.value.viewController()
-            let action = route.action.value
-            action.perform(on: sourceController, animated: animated, completion: completion)
-        } catch {
-            completion?(.failure(error))
-        }
+    public func process(_ incomingRoute: IncomingRoute) {
+        _process(incomingRoute)
     }
 }

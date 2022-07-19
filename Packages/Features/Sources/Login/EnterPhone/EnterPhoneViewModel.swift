@@ -4,21 +4,25 @@ import Foundation
 import PWRFoundation
 import RxSwift
 import RxRelay
+import Routing
 
 protocol EnterPhoneViewModelProtocol {
     var actions: AnyObserver<EnterPhone.Action> { get }
 }
 
-final class EnterPhoneViewModel: EnterPhoneViewModelProtocol {
-    private let router: EnterPhoneRouter
+enum EnterPhoneRoute {
+    case `continue`
+}
+
+final class EnterPhoneViewModel: EnterPhoneViewModelProtocol, Routable {
+    typealias Route = EnterPhoneRoute
     
     private let actionRelay = PublishRelay<EnterPhone.Action>()
     private let disposeBag = DisposeBag()
     
     var actions: AnyObserver<EnterPhone.Action> { actionRelay.asObserver() }
     
-    init(router: EnterPhoneRouter) {
-        self.router = router
+    init() {
         subscribeToActions()
     }
 }
@@ -34,10 +38,8 @@ private extension EnterPhoneViewModel {
     
     func processAction(_ action: EnterPhone.Action) {
         switch action {
-        case .confirmTapped:
-            router.routeToHome()
-        case .backTapped:
-            router.routeBack()
+        case .continueTapped:
+            routes.accept(.continue)
         }
     }
 }

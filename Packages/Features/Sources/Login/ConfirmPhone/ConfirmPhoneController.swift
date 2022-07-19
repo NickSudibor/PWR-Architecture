@@ -6,13 +6,13 @@ import SnapKit
 import RxSwift
 import RxCocoa
 
-final class OnboardingController: UIViewController {
-    private let viewModel: OnboardingViewModelProtocol
+final class ConfirmPhoneController: UIViewController {
+    private let viewModel: ConfirmPhoneViewModelProtocol
     private let disposeBag = DisposeBag()
     
     private let actionButton = UIButton(type: .system)
     
-    init(viewModel: OnboardingViewModelProtocol) {
+    init(viewModel: ConfirmPhoneViewModelProtocol) {
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
     }
@@ -31,11 +31,11 @@ final class OnboardingController: UIViewController {
 
 // MARK: - View Setup
 
-private extension OnboardingController {
+private extension ConfirmPhoneController {
     func bindUI() {
         actionButton.rx
             .tap
-            .map { _ in Onboarding.Action.enterPhoneTapped }
+            .map { _ in ConfirmPhone.Action.confirmTapped }
             .bind(to: viewModel.actions)
             .disposed(by: disposeBag)
     }
@@ -44,7 +44,7 @@ private extension OnboardingController {
         title = "Onboarding"
         view.backgroundColor = .white
         
-        actionButton.setTitle("ENTER PHONE", for: .normal)
+        actionButton.setTitle("CONFIRM", for: .normal)
         actionButton.titleLabel?.font = UIFont.systemFont(ofSize: 17, weight: .bold)
         actionButton.setTitleColor(.white, for: .normal)
         actionButton.backgroundColor = UIColor.systemBlue

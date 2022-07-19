@@ -24,7 +24,12 @@ let package = Package(
                 externalDependencies: [.SnapKit]
             )
         ),
-        .target(name: "Routing")
+        .target(
+            name: "Routing",
+            dependencies: Dependencies.link(
+                externalDependencies: [.RxSwift, .RxRelay]
+            )
+        )
     ]
 )
 

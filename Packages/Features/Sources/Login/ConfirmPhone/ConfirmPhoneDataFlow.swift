@@ -2,8 +2,8 @@
 
 import Foundation
 
-enum Onboarding {
+enum ConfirmPhone {
     enum Action {
-        case enterPhoneTapped
+        case confirmTapped
     }
 }

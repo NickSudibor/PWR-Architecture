@@ -17,7 +17,7 @@ public final class RoutingDestinationBox {
 }
 
 public extension RoutingDestinationBox {
-    static func controller(_ controller: UIViewController) -> RoutingDestinationBox {
+    static func to(_ controller: UIViewController) -> RoutingDestinationBox {
         let destination = ConcreteRoutingDestination(controller)
         return .init(destination)
     }
