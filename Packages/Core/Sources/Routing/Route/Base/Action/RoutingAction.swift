@@ -22,8 +22,11 @@ public final class RoutingActionBox {
 }
 
 public extension RoutingActionBox {
-    static func present() -> RoutingActionBox {
-        let action = PresentAction()
+    static func present(
+        presentationStyle: UIModalPresentationStyle = .automatic,
+        transitionStyle: UIModalTransitionStyle = .coverVertical
+    ) -> RoutingActionBox {
+        let action = PresentAction(presentationStyle: presentationStyle, transitionStyle: transitionStyle)
         return .init(action)
     }
     

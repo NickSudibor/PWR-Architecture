@@ -12,6 +12,7 @@ protocol ConfirmPhoneViewModelProtocol {
 
 enum ConfirmPhoneRoute {
     case confirm
+    case back
 }
 
 final class ConfirmPhoneViewModel: ConfirmPhoneViewModelProtocol, Routable {
@@ -40,6 +41,8 @@ private extension ConfirmPhoneViewModel {
         switch action {
         case .confirmTapped:
             routes.accept(.confirm)
+        case .backTapped:
+            routes.accept(.back)
         }
     }
 }

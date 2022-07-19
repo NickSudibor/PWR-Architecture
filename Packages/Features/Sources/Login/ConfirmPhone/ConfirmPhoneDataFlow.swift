@@ -5,5 +5,6 @@ import Foundation
 enum ConfirmPhone {
     enum Action {
         case confirmTapped
+        case backTapped
     }
 }

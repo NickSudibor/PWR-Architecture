@@ -4,21 +4,25 @@ import Foundation
 import PWRFoundation
 import RxSwift
 import RxRelay
+import Routing
 
 protocol FeedViewModelProtocol {
     var actions: AnyObserver<Feed.Action> { get }
 }
 
-final class FeedViewModel: FeedViewModelProtocol {
-    private let router: FeedRouter
+enum FeedRoute {
+    case feedDetails
+}
+
+final class FeedViewModel: FeedViewModelProtocol, Routable {
+    typealias Route = FeedRoute
     
     private let actionRelay = PublishRelay<Feed.Action>()
     private let disposeBag = DisposeBag()
     
     var actions: AnyObserver<Feed.Action> { actionRelay.asObserver() }
     
-    init(router: FeedRouter) {
-        self.router = router
+    init() {
         subscribeToActions()
     }
 }
@@ -35,7 +39,7 @@ private extension FeedViewModel {
     func processAction(_ action: Feed.Action) {
         switch action {
         case .feedDetailsTapped:
-            router.routeToFeedDetails()
+            routes.accept(.feedDetails)
         }
     }
 }

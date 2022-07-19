@@ -7,7 +7,7 @@ public struct RouteBack {
     public let action: RouteBackActionBox
     
     public init(
-        source: RoutingSourceBox,
+        source: RoutingSourceBox = .topmost(),
         action: RouteBackActionBox
     ) {
         self.source = source

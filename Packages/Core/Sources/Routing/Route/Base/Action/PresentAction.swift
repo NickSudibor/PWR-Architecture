@@ -7,8 +7,8 @@ public final class PresentAction: RoutingAction {
     private let transitionStyle: UIModalTransitionStyle
     
     public init(
-        presentationStyle: UIModalPresentationStyle = .automatic,
-        transitionStyle: UIModalTransitionStyle = .coverVertical
+        presentationStyle: UIModalPresentationStyle,
+        transitionStyle: UIModalTransitionStyle
     ) {
         self.presentationStyle = presentationStyle
         self.transitionStyle = transitionStyle

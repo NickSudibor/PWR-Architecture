@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0C29B5E928871536001B2281 /* Dependencies.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C29B5E828871536001B2281 /* Dependencies.swift */; };
+		0C29B5EB288745CF001B2281 /* Feed in Frameworks */ = {isa = PBXBuildFile; productRef = 0C29B5EA288745CF001B2281 /* Feed */; };
 		0C3DE1202847691E007B7811 /* UIComponents in Frameworks */ = {isa = PBXBuildFile; productRef = 0C3DE11F2847691E007B7811 /* UIComponents */; };
 		0C3DE12428476925007B7811 /* Login in Frameworks */ = {isa = PBXBuildFile; productRef = 0C3DE12328476925007B7811 /* Login */; };
 		0C603A4B2806135F00077F30 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C603A4A2806135F00077F30 /* AppDelegate.swift */; };
@@ -32,6 +33,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0C29B5EB288745CF001B2281 /* Feed in Frameworks */,
 				0C3DE12428476925007B7811 /* Login in Frameworks */,
 				0CB14F0D28575B7E00DAAFA6 /* Routing in Frameworks */,
 				0C3DE1202847691E007B7811 /* UIComponents in Frameworks */,
@@ -123,6 +125,7 @@
 				0C3DE11F2847691E007B7811 /* UIComponents */,
 				0C3DE12328476925007B7811 /* Login */,
 				0CB14F0C28575B7E00DAAFA6 /* Routing */,
+				0C29B5EA288745CF001B2281 /* Feed */,
 			);
 			productName = "PWR-Architecture";
 			productReference = 0C603A472806135F00077F30 /* PWR-Architecture.app */;
@@ -397,6 +400,10 @@
 /* End XCConfigurationList section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		0C29B5EA288745CF001B2281 /* Feed */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Feed;
+		};
 		0C3DE11F2847691E007B7811 /* UIComponents */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = UIComponents;

@@ -3,13 +3,15 @@
 import Foundation
 import PWRFoundation
 import Login
+import Feed
 
 final class Dependencies {
     private let resolver = Resolver.main
     
     func register() {
         [
-            LoginDependencies()
+            LoginDependencies(),
+            FeedDependencies(),
         ].forEach { $0.register(using: resolver) }
     }
 }

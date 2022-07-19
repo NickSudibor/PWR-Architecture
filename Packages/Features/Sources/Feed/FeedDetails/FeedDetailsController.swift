@@ -17,6 +17,7 @@ final class FeedDetailsController: UIViewController {
     init(viewModel: FeedDetailsViewModelProtocol) {
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
+        hidesBottomBarWhenPushed = true
     }
     
     required init?(coder: NSCoder) {

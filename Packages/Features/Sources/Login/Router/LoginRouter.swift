@@ -54,17 +54,15 @@ private extension LoginRouter {
             .bind(onNext: process(confirmPhoneRoute:))
             .disposed(by: disposeBag)
         
-        let route = Route(
-            destination: .to(item.controller),
-            action: .push()
-        )
-        navigate(with: route)
+        push(item.controller)
     }
     
     func process(confirmPhoneRoute: ConfirmPhoneRoute) {
         switch confirmPhoneRoute {
         case .confirm:
             break
+        case .back:
+            navigateBack()
         }
     }
 }
