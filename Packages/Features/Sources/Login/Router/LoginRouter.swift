@@ -5,21 +5,21 @@ import PWRFoundation
 import Routing
 import RxSwift
 
-public enum LoginIncomingRoute {
+public enum LoginInwardRoute {
     case enterPhone
 }
 
-public enum LoginOutgoingRoute {
+public enum LoginOutwardRoute {
     case loginSucceeded
 }
 
 final class LoginRouter: RouterTrait {    
     @Injected private var factory: LoginFactoryProtocol
-    @Injected private var adapted: AnyRouter<LoginOutgoingRoute>
+    @Injected private var adapted: AnyRouter<LoginOutwardRoute>
     private let disposeBag = DisposeBag()
     
-    func process(_ incomingRoute: LoginIncomingRoute) {
-        switch incomingRoute {
+    func process(_ inwardRoute: LoginInwardRoute) {
+        switch inwardRoute {
         case .enterPhone:
             navigateToEnterPhone()
         }

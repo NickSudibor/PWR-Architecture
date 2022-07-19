@@ -9,7 +9,7 @@ public final class ProfileDependencies: DependencyContainer {
     
     public func register(using resolver: Resolver) {
         // Public
-        resolver.register(AnyRouter<ProfileIncomingRoute>.self, factory: { ProfileRouter().asAnyRouter() }).scope(.application)
+        resolver.register(AnyRouter<ProfileInwardRoute>.self, factory: { ProfileRouter().asAnyRouter() }).scope(.application)
         
         // Internal
         resolver.register(ProfileFactoryProtocol.self, factory: { ProfileFactory() }).scope(.application)

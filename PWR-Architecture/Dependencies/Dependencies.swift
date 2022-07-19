@@ -19,6 +19,6 @@ final class Dependencies {
         containers.forEach { $0.register(using: resolver) }
         
         // Routing Adapters
-        resolver.register(AnyRouter<LoginOutgoingRoute>.self, factory: { LoginRouterAdapter().asAnyRouter() }).scope(.application)
+        resolver.register(AnyRouter<LoginOutwardRoute>.self, factory: { LoginRouterAdapter().asAnyRouter() }).scope(.application)
     }
 }

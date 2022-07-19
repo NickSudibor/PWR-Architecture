@@ -5,7 +5,7 @@ import Routing
 import PWRFoundation
 import RxSwift
 
-public enum ProfileIncomingRoute {
+public enum ProfileInwardRoute {
     case embed(in: UITabBarController)
 }
 
@@ -13,8 +13,8 @@ final class ProfileRouter: RouterTrait {
     @Injected private var factory: ProfileFactoryProtocol
     private let disposeBag = DisposeBag()
     
-    func process(_ incomingRoute: ProfileIncomingRoute) {
-        switch incomingRoute {
+    func process(_ inwardRoute: ProfileInwardRoute) {
+        switch inwardRoute {
         case let .embed(tabBar):
             navigateToProfile(embedIn: tabBar)
         }
