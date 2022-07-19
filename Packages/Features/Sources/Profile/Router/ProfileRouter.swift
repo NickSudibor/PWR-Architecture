@@ -9,8 +9,13 @@ public enum ProfileInwardRoute {
     case embed(in: UITabBarController)
 }
 
+public enum ProfileOutwardRoute {
+    case settings
+}
+
 final class ProfileRouter: RouterTrait {
     @Injected private var factory: ProfileFactoryProtocol
+    @Injected private var adapter: AnyRouter<ProfileOutwardRoute>
     private let disposeBag = DisposeBag()
     
     func process(_ inwardRoute: ProfileInwardRoute) {
@@ -57,7 +62,7 @@ private extension ProfileRouter {
     func process(profileDetailsRoute: ProfileDetailsRoute) {
         switch profileDetailsRoute {
         case .settings:
-            break
+            adapter.process(.settings)
         case .back:
             navigateBack()
         }

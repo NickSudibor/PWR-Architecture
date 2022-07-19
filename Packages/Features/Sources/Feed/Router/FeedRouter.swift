@@ -9,8 +9,13 @@ public enum FeedInwardRoute {
     case embed(in: UITabBarController)
 }
 
+public enum FeedOutwardRoute {
+    case settings
+}
+
 final class FeedRouter: RouterTrait {
     @Injected private var factory: FeedFactoryProtocol
+    @Injected private var adapter: AnyRouter<FeedOutwardRoute>
     private let disposeBag = DisposeBag()
     
     func process(_ inwardRoute: FeedInwardRoute) {
@@ -57,7 +62,7 @@ private extension FeedRouter {
     func process(feedDetailsRoute: FeedDetailsRoute) {
         switch feedDetailsRoute {
         case .settings:
-            break
+            adapter.process(.settings)
         case .back:
             navigateBack()
         }

@@ -7,7 +7,7 @@ import Login
 import Feed
 import Profile
 
-final class LoginRouterAdapter: RouterTrait {
+final class LoginRoutingAdapter: RouterTrait {
     @Injected private var feedRouter: AnyRouter<FeedInwardRoute>
     @Injected private var profileRouter: AnyRouter<ProfileInwardRoute>
     

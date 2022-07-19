@@ -4,21 +4,25 @@ import Foundation
 import PWRFoundation
 import RxSwift
 import RxRelay
+import Routing
 
 protocol SettingsViewModelProtocol {
     var actions: AnyObserver<Settings.Action> { get }
 }
 
-final class SettingsViewModel: SettingsViewModelProtocol {
-    private let router: SettingsRouter
+enum SettingsRoute {
+    case close
+}
+
+final class SettingsViewModel: SettingsViewModelProtocol, Routable {
+    typealias Route = SettingsRoute
     
     private let actionRelay = PublishRelay<Settings.Action>()
     private let disposeBag = DisposeBag()
     
     var actions: AnyObserver<Settings.Action> { actionRelay.asObserver() }
     
-    init(router: SettingsRouter) {
-        self.router = router
+    init() {
         subscribeToActions()
     }
 }
@@ -34,10 +38,8 @@ private extension SettingsViewModel {
     
     func processAction(_ action: Settings.Action) {
         switch action {
-        case .profileTapped:
-            router.routeToProfileFromSettings()
         case .closeTapped:
-            router.dismiss()
+            routes.accept(.close)
         }
     }
 }

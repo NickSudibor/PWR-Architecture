@@ -6,6 +6,7 @@ import Routing
 import Login
 import Feed
 import Profile
+import Settings
 
 final class Dependencies {
     private let resolver = Resolver.main
@@ -14,11 +15,14 @@ final class Dependencies {
         let containers: [DependencyContainer] = [
             LoginDependencies(),
             FeedDependencies(),
-            ProfileDependencies()
+            ProfileDependencies(),
+            SettingsDependencies()
         ]
         containers.forEach { $0.register(using: resolver) }
         
         // Routing Adapters
-        resolver.register(AnyRouter<LoginOutwardRoute>.self, factory: { LoginRouterAdapter().asAnyRouter() }).scope(.application)
+        resolver.register(AnyRouter<LoginOutwardRoute>.self, factory: { LoginRoutingAdapter().asAnyRouter() }).scope(.application)
+        resolver.register(AnyRouter<FeedOutwardRoute>.self, factory: { FeedRoutingAdapter().asAnyRouter() }).scope(.application)
+        resolver.register(AnyRouter<ProfileOutwardRoute>.self, factory: { ProfileRoutingAdapter().asAnyRouter() }).scope(.application)
     }
 }
