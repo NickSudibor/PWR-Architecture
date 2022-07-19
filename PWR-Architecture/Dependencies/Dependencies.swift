@@ -9,9 +9,10 @@ final class Dependencies {
     private let resolver = Resolver.main
     
     func register() {
-        [
+        let containers: [DependencyContainer] = [
             LoginDependencies(),
-            FeedDependencies(),
-        ].forEach { $0.register(using: resolver) }
+            FeedDependencies()
+        ]
+        containers.forEach { $0.register(using: resolver) }
     }
 }

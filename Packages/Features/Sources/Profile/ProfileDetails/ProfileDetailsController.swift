@@ -17,6 +17,7 @@ final class ProfileDetailsController: UIViewController {
     init(viewModel: ProfileDetailsViewModelProtocol) {
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
+        hidesBottomBarWhenPushed = true
     }
     
     required init?(coder: NSCoder) {

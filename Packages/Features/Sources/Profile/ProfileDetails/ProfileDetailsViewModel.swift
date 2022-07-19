@@ -4,21 +4,26 @@ import Foundation
 import PWRFoundation
 import RxSwift
 import RxRelay
+import Routing
 
 protocol ProfileDetailsViewModelProtocol {
     var actions: AnyObserver<ProfileDetails.Action> { get }
 }
 
-final class ProfileDetailsViewModel: ProfileDetailsViewModelProtocol {
-    private let router: ProfileDetailsRouter
+enum ProfileDetailsRoute {
+    case settings
+    case back
+}
+
+final class ProfileDetailsViewModel: ProfileDetailsViewModelProtocol, Routable {
+    typealias Route = ProfileDetailsRoute
     
     private let actionRelay = PublishRelay<ProfileDetails.Action>()
     private let disposeBag = DisposeBag()
     
     var actions: AnyObserver<ProfileDetails.Action> { actionRelay.asObserver() }
     
-    init(router: ProfileDetailsRouter) {
-        self.router = router
+    init() {
         subscribeToActions()
     }
 }
@@ -35,9 +40,9 @@ private extension ProfileDetailsViewModel {
     func processAction(_ action: ProfileDetails.Action) {
         switch action {
         case .settingsTapped:
-            router.routeToSettings()
+            routes.accept(.settings)
         case .backTapped:
-            router.routeBack()
+            routes.accept(.back)
         }
     }
 }

@@ -9,6 +9,12 @@ public protocol Router {
 
 // MARK: - AnyRouter
 
+public extension Router {
+    func asAnyRouter() -> AnyRouter<IncomingRoute> {
+        return .init(self)
+    }
+}
+
 public final class AnyRouter<IncomingRoute>: Router {
     private let _process: (IncomingRoute) -> ()
     

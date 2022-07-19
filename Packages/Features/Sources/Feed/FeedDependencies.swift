@@ -5,7 +5,11 @@ import PWRFoundation
 import Routing
 
 public final class FeedDependencies: DependencyContainer {
+    public init() { }
+    
     public func register(using resolver: Resolver) {
+        // Public
+        resolver.register(AnyRouter<FeedIncomingRoute>.self, factory: { FeedRouter().asAnyRouter() }).scope(.application)
         
         // Internal
         resolver.register(FeedFactoryProtocol.self, factory: { FeedFactory() }).scope(.application)
