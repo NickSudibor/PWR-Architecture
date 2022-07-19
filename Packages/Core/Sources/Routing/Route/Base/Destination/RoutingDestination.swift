@@ -17,19 +17,24 @@ public final class RoutingDestinationBox {
 }
 
 public extension RoutingDestinationBox {
-    static func concrete(_ controller: UIViewController) -> RoutingDestinationBox {
+    static func controller(_ controller: UIViewController) -> RoutingDestinationBox {
         let destination = ConcreteRoutingDestination(controller)
         return .init(destination)
     }
     
-    static func embed(_ destination: RoutingDestinationBox, in container: ContainerController) -> RoutingDestinationBox {
-        let embedDestination = EmbedRoutingDestination(container: container, embedded: [destination.value])
+    static func embed(_ controller: UIViewController, in container: ContainerController) -> RoutingDestinationBox {
+        let embedDestination = EmbedRoutingDestination(
+            container: container,
+            embedded: [ConcreteRoutingDestination(controller)]
+        )
         return .init(embedDestination)
     }
     
-    static func embed(_ destinations: [RoutingDestinationBox], in container: ContainerController) -> RoutingDestinationBox {
-        let destinationValues = destinations.map { $0.value }
-        let embedDestination = EmbedRoutingDestination(container: container, embedded: destinationValues)
+    static func embed(_ controllers: [UIViewController], in container: ContainerController) -> RoutingDestinationBox {
+        let embedDestination = EmbedRoutingDestination(
+            container: container,
+            embedded: controllers.map { ConcreteRoutingDestination($0) }
+        )
         return .init(embedDestination)
     }
 }
