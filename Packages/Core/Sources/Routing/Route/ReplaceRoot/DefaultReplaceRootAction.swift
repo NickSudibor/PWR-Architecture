@@ -14,7 +14,17 @@ public final class DefaultReplaceRootAction: ReplaceRootRoutingAction {
         animated: Bool,
         completion: ((RoutingResult) -> Void)?
     ) {
-        windowProvider.window.rootViewController = destinationController
+        let window = windowProvider.window
+        if animated {
+            UIView.transition(with: window, duration: 0.25, options: [.transitionCrossDissolve], animations: {
+                let animationsState = UIView.areAnimationsEnabled
+                UIView.setAnimationsEnabled(false)
+                window.rootViewController = destinationController
+                UIView.setAnimationsEnabled(animationsState)
+            })
+        } else {
+            window.rootViewController = destinationController
+        }
         completion?(.success)
     }
 }

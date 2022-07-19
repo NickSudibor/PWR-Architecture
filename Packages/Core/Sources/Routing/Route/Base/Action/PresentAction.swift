@@ -3,7 +3,16 @@
 import UIKit
 
 public final class PresentAction: RoutingAction {
-    public init() { }
+    private let presentationStyle: UIModalPresentationStyle
+    private let transitionStyle: UIModalTransitionStyle
+    
+    public init(
+        presentationStyle: UIModalPresentationStyle = .automatic,
+        transitionStyle: UIModalTransitionStyle = .coverVertical
+    ) {
+        self.presentationStyle = presentationStyle
+        self.transitionStyle = transitionStyle
+    }
     
     public func perform(
         on sourceController: UIViewController,
@@ -11,6 +20,8 @@ public final class PresentAction: RoutingAction {
         animated: Bool,
         completion: ((RoutingResult) -> Void)?
     ) {
+        destinationController.modalPresentationStyle = presentationStyle
+        destinationController.modalTransitionStyle = transitionStyle
         sourceController.present(destinationController, animated: animated, completion: { completion?(.success) })
     }
 }
