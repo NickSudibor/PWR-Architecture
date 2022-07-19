@@ -30,7 +30,8 @@ private extension FeedRouter {
             .bind(onNext: process(feedRoute:))
             .disposed(by: disposeBag)
         
-        tabBar.push(item.controller, animated: false)
+        let navigationController = UINavigationController(rootViewController: item.controller)
+        tabBar.push(navigationController, animated: false)
     }
     
     func process(feedRoute: FeedRoute) {

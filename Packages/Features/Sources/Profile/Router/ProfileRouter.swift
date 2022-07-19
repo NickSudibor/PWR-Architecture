@@ -10,7 +10,7 @@ public enum ProfileIncomingRoute {
 }
 
 final class ProfileRouter: RouterTrait {
-    @Injected private var factory: ProfileFactory
+    @Injected private var factory: ProfileFactoryProtocol
     private let disposeBag = DisposeBag()
     
     func process(_ incomingRoute: ProfileIncomingRoute) {
@@ -30,7 +30,8 @@ private extension ProfileRouter {
             .bind(onNext: process(profileRoute:))
             .disposed(by: disposeBag)
         
-        tabBar.push(item.controller, animated: false)
+        let navigationController = UINavigationController(rootViewController: item.controller)
+        tabBar.push(navigationController, animated: false)
     }
     
     func process(profileRoute: ProfileRoute) {

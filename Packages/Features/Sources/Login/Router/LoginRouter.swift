@@ -9,8 +9,13 @@ public enum LoginIncomingRoute {
     case enterPhone
 }
 
+public enum LoginOutgoingRoute {
+    case loginSucceeded
+}
+
 final class LoginRouter: RouterTrait {    
     @Injected private var factory: LoginFactoryProtocol
+    @Injected private var adapted: AnyRouter<LoginOutgoingRoute>
     private let disposeBag = DisposeBag()
     
     func process(_ incomingRoute: LoginIncomingRoute) {
@@ -31,8 +36,7 @@ private extension LoginRouter {
             .disposed(by: disposeBag)
         
         let route = ReplaceRootRoute(
-            destination: .embed(item.controller, in: UINavigationController()),
-            action: .default()
+            destination: .embed(item.controller, in: UINavigationController())
         )
         navigate(with: route)
     }
@@ -60,7 +64,7 @@ private extension LoginRouter {
     func process(confirmPhoneRoute: ConfirmPhoneRoute) {
         switch confirmPhoneRoute {
         case .confirm:
-            break
+            adapted.process(.loginSucceeded)
         case .back:
             navigateBack()
         }

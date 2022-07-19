@@ -8,7 +8,7 @@ public struct ReplaceRootRoute {
     
     public init(
         destination: RoutingDestinationBox,
-        action: ReplaceRootActionBox
+        action: ReplaceRootActionBox = .default()
     ) {
         self.destination = destination
         self.action = action

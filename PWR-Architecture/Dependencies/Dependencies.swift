@@ -2,8 +2,10 @@
 
 import Foundation
 import PWRFoundation
+import Routing
 import Login
 import Feed
+import Profile
 
 final class Dependencies {
     private let resolver = Resolver.main
@@ -11,8 +13,12 @@ final class Dependencies {
     func register() {
         let containers: [DependencyContainer] = [
             LoginDependencies(),
-            FeedDependencies()
+            FeedDependencies(),
+            ProfileDependencies()
         ]
         containers.forEach { $0.register(using: resolver) }
+        
+        // Routing Adapters
+        resolver.register(AnyRouter<LoginOutgoingRoute>.self, factory: { LoginRouterAdapter().asAnyRouter() }).scope(.application)
     }
 }
