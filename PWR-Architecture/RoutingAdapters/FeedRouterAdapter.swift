@@ -7,10 +7,10 @@ import Feed
 import Settings
 
 final class FeedRoutingAdapter: RouterTrait {
-    @Injected private var settingsRouter: AnyRouter<SettingsInwardRoute>
+    @Injected private var settingsRouter: AnyRouter<SettingsStartingPoint>
     
-    func process(_ inwardRoute: FeedOutwardRoute) {
-        switch inwardRoute {
+    func process(_ point: FeedFinishPoint) {
+        switch point {
         case .settings:
             settingsRouter.process(.settings)
         }

@@ -7,7 +7,7 @@ import Login
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
-    @LazyInjected private var loginRouter: AnyRouter<LoginInwardRoute>
+    @LazyInjected private var loginRouter: AnyRouter<LoginStartingPoint>
     
     private let dependencies = Dependencies()
     

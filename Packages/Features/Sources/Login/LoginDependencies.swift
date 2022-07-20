@@ -9,7 +9,7 @@ public final class LoginDependencies: DependencyContainer {
     
     public func register(using resolver: Resolver) {
         // Public
-        resolver.register(AnyRouter<LoginInwardRoute>.self, factory: { LoginRouter().asAnyRouter() }).scope(.application)
+        resolver.register(AnyRouter<LoginStartingPoint>.self, factory: { LoginRouter().asAnyRouter() }).scope(.application)
         
         // Internal
         resolver.register(LoginFactoryProtocol.self, factory: { LoginFactory() }).scope(.application)

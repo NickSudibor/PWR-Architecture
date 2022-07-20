@@ -3,26 +3,26 @@
 import UIKit
 
 public protocol Router {
-    associatedtype InwardRoute
-    func process(_ inwardRoute: InwardRoute)
+    associatedtype StartingPoint
+    func process(_ point: StartingPoint)
 }
 
 // MARK: - AnyRouter
 
 public extension Router {
-    func asAnyRouter() -> AnyRouter<InwardRoute> {
+    func asAnyRouter() -> AnyRouter<StartingPoint> {
         return .init(self)
     }
 }
 
-public final class AnyRouter<InwardRoute>: Router {
-    private let _process: (InwardRoute) -> ()
+public final class AnyRouter<StartingPoint>: Router {
+    private let _process: (StartingPoint) -> ()
     
-    public init<Concrete: Router>(_ concrete: Concrete) where Concrete.InwardRoute == InwardRoute {
+    public init<Concrete: Router>(_ concrete: Concrete) where Concrete.StartingPoint == StartingPoint {
         _process = concrete.process(_:)
     }
     
-    public func process(_ inwardRoute: InwardRoute) {
-        _process(inwardRoute)
+    public func process(_ point: StartingPoint) {
+        _process(point)
     }
 }

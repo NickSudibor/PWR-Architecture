@@ -9,7 +9,7 @@ public final class SettingsDependencies: DependencyContainer {
     
     public func register(using resolver: Resolver) {
         // Public
-        resolver.register(AnyRouter<SettingsInwardRoute>.self, factory: { SettingsRouter().asAnyRouter() })
+        resolver.register(AnyRouter<SettingsStartingPoint>.self, factory: { SettingsRouter().asAnyRouter() })
         
         // Internal
         resolver.register(SettingsFactoryProtocol.self, factory: { SettingsFactory() }).scope(.application)

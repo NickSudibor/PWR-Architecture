@@ -8,11 +8,11 @@ import Feed
 import Profile
 
 final class LoginRoutingAdapter: RouterTrait {
-    @Injected private var feedRouter: AnyRouter<FeedInwardRoute>
-    @Injected private var profileRouter: AnyRouter<ProfileInwardRoute>
+    @Injected private var feedRouter: AnyRouter<FeedStartingPoint>
+    @Injected private var profileRouter: AnyRouter<ProfileStartingPoint>
     
-    func process(_ incomingRoute: LoginOutwardRoute) {
-        switch incomingRoute {
+    func process(_ point: LoginFinishPoint) {
+        switch point {
         case .loginSucceeded:
             navigateToTabBar()
         }

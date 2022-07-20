@@ -9,7 +9,7 @@ public final class FeedDependencies: DependencyContainer {
     
     public func register(using resolver: Resolver) {
         // Public
-        resolver.register(AnyRouter<FeedInwardRoute>.self, factory: { FeedRouter().asAnyRouter() }).scope(.application)
+        resolver.register(AnyRouter<FeedStartingPoint>.self, factory: { FeedRouter().asAnyRouter() }).scope(.application)
         
         // Internal
         resolver.register(FeedFactoryProtocol.self, factory: { FeedFactory() }).scope(.application)

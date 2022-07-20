@@ -5,21 +5,21 @@ import PWRFoundation
 import Routing
 import RxSwift
 
-public enum FeedInwardRoute {
+public enum FeedStartingPoint {
     case embed(in: UITabBarController)
 }
 
-public enum FeedOutwardRoute {
+public enum FeedFinishPoint {
     case settings
 }
 
 final class FeedRouter: RouterTrait {
     @Injected private var factory: FeedFactoryProtocol
-    @Injected private var adapter: AnyRouter<FeedOutwardRoute>
+    @Injected private var adapter: AnyRouter<FeedFinishPoint>
     private let disposeBag = DisposeBag()
     
-    func process(_ inwardRoute: FeedInwardRoute) {
-        switch inwardRoute {
+    func process(_ point: FeedStartingPoint) {
+        switch point {
         case let .embed(tabBar):
             navigateToFeed(embedIn: tabBar)
         }

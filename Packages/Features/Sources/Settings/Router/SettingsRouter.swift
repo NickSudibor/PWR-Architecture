@@ -5,7 +5,7 @@ import Routing
 import PWRFoundation
 import RxSwift
 
-public enum SettingsInwardRoute {
+public enum SettingsStartingPoint {
     case settings
 }
 
@@ -13,8 +13,8 @@ final class SettingsRouter: RouterTrait {
     @Injected private var factory: SettingsFactoryProtocol
     private let disposeBag = DisposeBag()
     
-    func process(_ inwardRoute: SettingsInwardRoute) {
-        switch inwardRoute {
+    func process(_ point: SettingsStartingPoint) {
+        switch point {
         case .settings:
             navigateToSettigns()
         }

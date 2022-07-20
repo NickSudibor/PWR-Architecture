@@ -7,10 +7,10 @@ import Profile
 import Settings
 
 final class ProfileRoutingAdapter: RouterTrait {
-    @Injected private var settingsRouter: AnyRouter<SettingsInwardRoute>
+    @Injected private var settingsRouter: AnyRouter<SettingsStartingPoint>
 
-    func process(_ inwardRoute: ProfileOutwardRoute) {
-        switch inwardRoute {
+    func process(_ point: ProfileFinishPoint) {
+        switch point {
         case .settings:
             settingsRouter.process(.settings)
         }
