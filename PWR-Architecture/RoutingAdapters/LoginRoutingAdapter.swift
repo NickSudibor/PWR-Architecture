@@ -8,8 +8,8 @@ import Feed
 import Profile
 
 final class LoginRoutingAdapter: RouterTrait {
-    @Injected private var feedRouter: AnyRouter<FeedStartingPoint>
-    @Injected private var profileRouter: AnyRouter<ProfileStartingPoint>
+    @LazyInjected private var feedRouter: AnyRouter<FeedStartingPoint>
+    @LazyInjected private var profileRouter: AnyRouter<ProfileStartingPoint>
     
     func process(_ point: LoginFinishPoint) {
         switch point {

@@ -4,6 +4,8 @@ import UIKit
 import RxSwift
 import RxRelay
 
+// MARK: - Item
+
 public struct RoutableItem<Route> {
     public let controller: UIViewController
     public let routes: Observable<Route>
@@ -13,6 +15,10 @@ public struct RoutableItem<Route> {
         self.routes = routes
     }
 }
+
+public struct NoRoute { }
+
+// MARK: - Routable
 
 public protocol Routable {
     associatedtype Route

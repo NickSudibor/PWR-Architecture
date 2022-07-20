@@ -14,8 +14,8 @@ public enum FeedFinishPoint {
 }
 
 final class FeedRouter: RouterTrait {
-    @Injected private var factory: FeedFactoryProtocol
-    @Injected private var adapter: AnyRouter<FeedFinishPoint>
+    @LazyInjected private var factory: FeedFactoryProtocol
+    @LazyInjected private var adapter: AnyRouter<FeedFinishPoint>
     private let disposeBag = DisposeBag()
     
     func process(_ point: FeedStartingPoint) {

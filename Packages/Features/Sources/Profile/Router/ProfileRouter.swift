@@ -14,8 +14,8 @@ public enum ProfileFinishPoint {
 }
 
 final class ProfileRouter: RouterTrait {
-    @Injected private var factory: ProfileFactoryProtocol
-    @Injected private var adapter: AnyRouter<ProfileFinishPoint>
+    @LazyInjected private var factory: ProfileFactoryProtocol
+    @LazyInjected private var adapter: AnyRouter<ProfileFinishPoint>
     private let disposeBag = DisposeBag()
     
     func process(_ point: ProfileStartingPoint) {

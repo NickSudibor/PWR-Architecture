@@ -14,8 +14,8 @@ public enum LoginFinishPoint {
 }
 
 final class LoginRouter: RouterTrait {    
-    @Injected private var factory: LoginFactoryProtocol
-    @Injected private var adapted: AnyRouter<LoginFinishPoint>
+    @LazyInjected private var factory: LoginFactoryProtocol
+    @LazyInjected private var adapted: AnyRouter<LoginFinishPoint>
     private let disposeBag = DisposeBag()
     
     func process(_ point: LoginStartingPoint) {

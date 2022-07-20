@@ -7,7 +7,7 @@ import Profile
 import Settings
 
 final class ProfileRoutingAdapter: RouterTrait {
-    @Injected private var settingsRouter: AnyRouter<SettingsStartingPoint>
+    @LazyInjected private var settingsRouter: AnyRouter<SettingsStartingPoint>
 
     func process(_ point: ProfileFinishPoint) {
         switch point {

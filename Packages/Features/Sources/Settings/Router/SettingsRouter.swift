@@ -10,7 +10,7 @@ public enum SettingsStartingPoint {
 }
 
 final class SettingsRouter: RouterTrait {
-    @Injected private var factory: SettingsFactoryProtocol
+    @LazyInjected private var factory: SettingsFactoryProtocol
     private let disposeBag = DisposeBag()
     
     func process(_ point: SettingsStartingPoint) {

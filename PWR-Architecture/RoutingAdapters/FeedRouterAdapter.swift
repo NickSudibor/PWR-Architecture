@@ -7,7 +7,7 @@ import Feed
 import Settings
 
 final class FeedRoutingAdapter: RouterTrait {
-    @Injected private var settingsRouter: AnyRouter<SettingsStartingPoint>
+    @LazyInjected private var settingsRouter: AnyRouter<SettingsStartingPoint>
     
     func process(_ point: FeedFinishPoint) {
         switch point {
